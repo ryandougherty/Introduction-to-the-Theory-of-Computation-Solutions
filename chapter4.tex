@@ -1,1 +1,12 @@
-\section*{Chapter 4}
+\section{Chapter 4}
+
+\subsection*{4.3} Let $ALL_{DFA} = \{\textlangle{}A\textrangle{} | A$ is a DFA and $L(A) = \Sigma^*\}$. Show that $ALL_{DFA}$ is decidable.
+\\
+\textbf{Solution:} We will design a TM T that decides $ALL_{DFA}$:
+\\
+T = ``On input \textlangle{}A\textrangle{} where A is a DFA:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Construct a DFA B such that $L(A) = \overline{L(B)}$.
+\item[2.]Run $E_{DFA}$ on input \textlangle{}B\textrangle{}. Output what $E_{DFA}$ outputs."
+\end{enumerate}
