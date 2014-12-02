@@ -1,6 +1,19 @@
 \section{Chapter 4}
+%		4.2		%
+\subsection*{4.2} Consider the problem of determining whether a DFA and a regular expression are equivalent. Express this problem as a language and show that it is decidable.
+\\
+\textbf{Solution:} We formulate the problem $EQ_{DFA,REX}$ = \{\textlangle{}A, R\textrangle{} $|$ A is a DFA, R is a regular expression, and $L(A) = L(R)\}$. We will design a TM T that decides $EQ_{DFA,REX}$:
+\\
+T = ``On input \textlangle{}A, R\textrangle{} where A is a DFA, R is a regular expression:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Use Theorem 1.54 to convert R into an equivalent DFA B. Therefore, $L(B) = L(R)$.
+\item[2.]Run $EQ_{DFA}$ on input \textlangle{}A, B\textrangle{}. Output what $EQ_{DFA}$ outputs."
+\end{enumerate}
+Since $EQ_{DFA}$ is decidable, and the conversion from regular expressions to DFAs takes finite time, $EQ_{DFA,REX}$ is decidable.
 
-\subsection*{4.3} Let $ALL_{DFA} = \{\textlangle{}A\textrangle{} | A$ is a DFA and $L(A) = \Sigma^*\}$. Show that $ALL_{DFA}$ is decidable.
+%		4.3		%
+\subsection*{4.3} Let $ALL_{DFA}$ = \{\textlangle{}A\textrangle{} $|$ A is a DFA and $L(A) = \Sigma^*\}$. Show that $ALL_{DFA}$ is decidable.
 \\
 \textbf{Solution:} We will design a TM T that decides $ALL_{DFA}$:
 \\
@@ -10,3 +23,4 @@ T = ``On input \textlangle{}A\textrangle{} where A is a DFA:
 \item[1.]Construct a DFA B such that $L(A) = \overline{L(B)}$.
 \item[2.]Run $E_{DFA}$ on input \textlangle{}B\textrangle{}. Output what $E_{DFA}$ outputs."
 \end{enumerate}
+Since $E_{DFA}$ is decidable, $ALL_{DFA}$ is decidable.
