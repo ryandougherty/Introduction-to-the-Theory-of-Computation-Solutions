@@ -24,3 +24,21 @@ T = ``On input \textlangle{}A\textrangle{} where A is a DFA:
 \item[2.]Run $E_{DFA}$ on input \textlangle{}B\textrangle{}. Output what $E_{DFA}$ outputs."
 \end{enumerate}
 Since $E_{DFA}$ is decidable, $ALL_{DFA}$ is decidable.
+
+%		4.15		%
+\subsection*{4.15} Show that the problem of determining whether a CFG generates all strings in 1* is decidable. In other words, show that \{\textlangle{}G\textrangle{} $|$ G is a CFG over $\{0, 1\}$ and $1^* \subset L(G)$\} is a decidable language. 
+\\
+\textbf{Solution:} Let $f$ be a computable function. Construct a decider D:
+\\
+D = ``On input \textlangle{}G\textrangle{} where G is a CFG:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Convert G into an equivalent CFG C in Chomsky Normal Form.
+\item[2.]Let $p$ be the pumping length of C.
+\item[3.]Repeat $\forall i \le f(p)$:
+\begin{enumerate}
+\item[a.]Check whether $1^i \in L(C)$.
+\item[b.]If not, $reject$ \textlangle{}G\textrangle{}.
+\end{enumerate}
+\item[4.]$Accept$ \textlangle{}G\textrangle{}.
+\end{enumerate}
