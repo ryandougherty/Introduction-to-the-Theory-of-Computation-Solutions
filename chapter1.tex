@@ -1,1 +1,16 @@
 \section{Chapter 1}
+
+%		1.42		%
+\subsection*{1.42} For languages $A$ and $B$, let the \emph{\textbf{shuffle}} of $A$ and $B$ be the language \{$w$ $|$ $w=a_1b_1...a_kb_k$, where $a_1...a_k \in A$ and $b_1...b_k \in B$, each $a_i,b_i \in \Sigma^*$\}. Show that the class of regular languages is closed under shuffle.
+\\
+\textbf{Solution:} Let $D_A = (Q_A, \Sigma, \delta_A, q_A, F_A$ and $D_B = (Q_B, \Sigma, \delta_B, q_B, F_B$ be the DFAs recognize $A$ and $B$, respectively. We will design a DFA $D = (Q, \Sigma, \delta, q_0, F)$ such that it recognizes the shuffle of $A$ and $B$ as follows:
+\begin{itemize}
+\item $Q = Q_A \times Q_B \times \{A, B\}$.
+\item $q_0 = (q_A, q_B, A)$.
+\item $F = F_A \times F_B \times \{A\}$.
+\item For $\delta$:
+\begin{itemize}
+\item $\delta((x, y, A), a) = (\delta_A(x, a), y, B)$.
+\item $\delta((x, y, B), b) = (x, \delta_B(y, b), A)$.
+\end{itemize}
+\end{itemize}
