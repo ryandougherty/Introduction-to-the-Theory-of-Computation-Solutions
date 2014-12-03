@@ -88,3 +88,28 @@ $D$ = ``On input \textlangle{}G\textrangle{} where G is a CFG:
 \item[4.]$Accept$ \textlangle{}G\textrangle{}.
 \end{enumerate}
 We can check $1^i \in L(C)$ using the Cocke-Younger-Kasami (CYK) algorithm for CFGs, which has a running time of $\Theta(n^3 |G|)$. Therefore, the loop has a running time of $\Theta(pn^3 |G|)$. Since Steps 1, 2, 3, and 4 take finite time, this language is decidable.
+
+%		4.24		%
+\subsection*{4.24} A \emph{\textbf{useless state}} in a pushdown automaton is never entered on any input string. Consider the problem of determining whether a pushdown automaton has any useless states. Formulate this problem as a language and show that it is decidable.
+\\
+\textbf{Solution:} Let $U_{PDA}$ = \{\textlangle{}$P$\textrangle{} $|$ $P$ is a PDA that has useless states\}. We will design a TM $T$ that decides $U_{PDA}$. First, we will define the problem $E_{PDA}$ = \{\textlangle{}$P$\textrangle{} $|$ $P$ is a PDA and $L(P) = \varnothing$\}. We now show that $E_{PDA}$ is decidable with a decider $D$:
+\\
+$D$ = ``On input \textlangle{}$P$\textrangle{} where $P$ is a PDA:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Convert $P$ into an equivalent CFG $G$.
+\item[2.]Run $E_{CFG}$ on input \textlangle{}$G$\textrangle{}. Output what $E_{CFG}$ outputs."
+\end{enumerate}
+This language is decidable because all steps in its construction take finite time, and $E_{CFG}$ is a decider.
+\\
+$T$ = ``On input \textlangle{}$P$\textrangle{} where $P = (Q, \Sigma, \Gamma, \delta, q_0, Z, F)$ is a PDA:
+\begin{enumerate}
+\itemsep0em
+\item[1.]For $\forall q \in Q$:
+\begin{enumerate}
+\item[a.]Modify $P$ such that $F = \{q\}$.
+\item[b.]Run $E_{PDA}$ on input \textlangle{}$P$\textrangle{}. If $E_{PDA}$ accepts, $accept$ \textlangle{}$P$\textrangle{}.
+\end{enumerate}
+\item[2.]$Reject$ \textlangle{}$P$\textrangle{}."
+\end{enumerate}
+Since $E_{PDA}$ is decidable, $U_{PDA}$ is decidable.
