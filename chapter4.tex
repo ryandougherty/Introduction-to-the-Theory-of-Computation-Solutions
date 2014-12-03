@@ -38,8 +38,22 @@ $T$ = ``On input \textlangle{}G\textrangle{} where $G$ is a CFG:
 \end{enumerate}
 Since converting a CFG into CNF is decidable, $A\epsilon_{CFG}$ is decidable.
 
+%		4.11		%
+\subsection*{4.11} Let $INFINITE_{PDA}$ = \{\textlangle{}$M$\textrangle{} $|$ $M$ is a PDA and $L(M)$ is an infinite language\}. Show that $INFINITE_{PDA}$ is decidable.
+\\
+\textbf{Solution:} We will design a TM $T$ that decides $INFINITE_{PDA}$:
+\\
+$T$ = ``On input \textlangle{}$M$\textrangle{} where $M$ is a PDA:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Construct an equivalent CFG $G$ from $M$.
+\item[2.]Convert $G$ into an equivalent CFG $C = (V, \Sigma, R, S)$ in Chomsky Normal Form.
+\item[3.]$Accept$ \textlangle{}$M$\textrangle{} if there exists a derivation $A \xRightarrow{+} uAv$ for some $u, v \in \Sigma^*$. Otherwise, $reject$ \textlangle{}$M$\textrangle{}.
+\end{enumerate}
+Since all of the algorithms in this machine are decidable, $INFINITE_{PDA}$ is decidable.
+
 %		4.13		%
-\subsection*{4.13} Let $A$ = \{\textlangle{}$R,S$\textrangle{} $| R$ and $S$ are regular expressions and $L(R) \subseteq L(S)\}$. Show that $A$ is decidable.
+\subsection*{4.13} Let $A$ = \{\textlangle{}$R,S$\textrangle{} $|$ $R$ and $S$ are regular expressions and $L(R) \subseteq L(S)\}$. Show that $A$ is decidable.
 \\
 \textbf{Solution:} We will design a TM $T$ that decides $A$:
 \\
