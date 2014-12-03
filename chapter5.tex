@@ -13,3 +13,17 @@ $E$ = ``On input \angles{M} where $M$ is a TM:
 \end{enumerate}
 Since $E_{TM}$ is undecidable, $USELESS_{TM}$ is also undecidable.
 
+%		5.17		%
+\subsection*{5.17} Show that the Post Correspondence Problem is decidable over the unary alphabet $\Sigma = \{1\}$.
+\\
+\textbf{Solution:} Since $\Sigma = \{1\}$, there is only a difference in the number of 1s on the top of each domino compared to the bottom. We will construct a decider $D$ that decides PCP for a unary alphabet:
+\\
+$D$ = ``On input a collection of dominos:
+\begin{enumerate}
+\itemsep0em
+\item[1.]If any domino has the same number of 1s on the top and bottom, $accept$.
+\item[2.]If all dominos have more 1s on the top than the bottom, or more 1s on the bottom than the top, $reject$.
+\item[3.]Let $d_1$ be one domino with $c_1$ more 1s on the top than the bottom, and $d_2$ be another domino with $c_2$ more 1s on the bottom than the top.
+\item[4.]Choose $c_2$ of the $d_1$ domino, and $c_1$ of the $d_2$ domino.
+\end{enumerate}
+Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1s on the bottom. Let $d_2$ have $t_2$ 1s on the top and $t_2 + c_2$. Choosing $c_2$ of the $d_1$ domino and $c_1$ of the $d_2$ domino yields $c_2 \times t_1 + c_1 \times t_2$ 1s on the top, and $c_2 \times (t_1 - c_1) + c_1 \times (t_2 + c_2) = c_2 \times t_1 + c_1 \times t_2$ 1s on the bottom, which is a match.
