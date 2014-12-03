@@ -27,3 +27,13 @@ $D$ = ``On input a collection of dominos:
 \item[4.]Choose $c_2$ of the $d_1$ domino, and $c_1$ of the $d_2$ domino.
 \end{enumerate}
 Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1s on the bottom. Let $d_2$ have $t_2$ 1s on the top and $t_2 + c_2$. Choosing $c_2$ of the $d_1$ domino and $c_1$ of the $d_2$ domino yields $c_2 \times t_1 + c_1 \times t_2$ 1s on the top, and $c_2 \times (t_1 - c_1) + c_1 \times (t_2 + c_2) = c_2 \times t_1 + c_1 \times t_2$ 1s on the bottom, which is a match.
+
+%		5.29		%
+\subsection*{5.29} Show that both conditions in Problem 5.28 are necessary for proving that P is undecidable.
+\\
+\textbf{Solution:} If the property $P$ is trivial, then one of the following is true:
+\begin{enumerate}
+\item[1.]All TM descriptions are in the language (if p includes all TMs)
+\item[2.]The language is empty. 
+\end{enumerate}
+For 1, we just build a TM that accepts if $M$ is a valid TM description. In the latter case, we build a TM that rejects all strings. If $P$ is a property of the machine rather than the language, it is possible for the language to be decidable.
