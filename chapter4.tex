@@ -2,39 +2,39 @@
 %		4.2		%
 \subsection*{4.2} Consider the problem of determining whether a DFA and a regular expression are equivalent. Express this problem as a language and show that it is decidable.
 \\
-\textbf{Solution:} We formulate the problem $EQ_{DFA,REX}$ = \{\textlangle{}$A, R$\textrangle{} $|$ $A$ is a DFA, $R$ is a regular expression, and $L(A) = L(R)\}$. We will design a TM $T$ that decides $EQ_{DFA,REX}$:
+\textbf{Solution:} We formulate the problem $EQ_{DFA,REX}$ = \{\angles{A, R} $|$ $A$ is a DFA, $R$ is a regular expression, and $L(A) = L(R)\}$. We will design a TM $T$ that decides $EQ_{DFA,REX}$:
 \\
-$T$ = ``On input \textlangle{}$A, R$\textrangle{} where $A$ is a DFA, $R$ is a regular expression:
+$T$ = ``On input \angles{A, R} where $A$ is a DFA, $R$ is a regular expression:
 \begin{enumerate}
 \itemsep0em
 \item[1.]Use Theorem 1.54 to convert $R$ into an equivalent DFA $B$. Therefore, $L(B) = L(R)$.
-\item[2.]Run $EQ_{DFA}$ on input \textlangle{}$A, B$\textrangle{}. Output what $EQ_{DFA}$ outputs."
+\item[2.]Run $EQ_{DFA}$ on input \angles{A, B}. Output what $EQ_{DFA}$ outputs."
 \end{enumerate}
 Since $EQ_{DFA}$ is decidable, and the conversion from regular expressions to DFAs takes finite time, $EQ_{DFA,REX}$ is decidable.
 
 %		4.3		%
-\subsection*{4.3} Let $ALL_{DFA}$ = \{\textlangle{}$A$\textrangle{} $|$ $A$ is a DFA and $L(A) = \Sigma^*\}$. Show that $ALL_{DFA}$ is decidable.
+\subsection*{4.3} Let $ALL_{DFA}$ = \{\angles{A} $|$ $A$ is a DFA and $L(A) = \Sigma^*\}$. Show that $ALL_{DFA}$ is decidable.
 \\
 \textbf{Solution:} We will design a TM $T$ that decides $ALL_{DFA}$:
 \\
-$T$ = ``On input \textlangle{}A\textrangle{} where A is a DFA:
+$T$ = ``On input \angles{A} where $A$ is a DFA:
 \begin{enumerate}
 \itemsep0em
-\item[1.]Construct a DFA $B$ such that $L(A) = \overline{L(B)}$.
-\item[2.]Run $E_{DFA}$ on input \textlangle{}B\textrangle{}. Output what $E_{DFA}$ outputs."
+\item[1.]Construct a DFA $B$ such that $L(B) = \overline{L(A)}$.
+\item[2.]Run $E_{DFA}$ on input \angles{B}. Output what $E_{DFA}$ outputs."
 \end{enumerate}
 Since $E_{DFA}$ is decidable, $ALL_{DFA}$ is decidable.
 
 %		4.4		%
-\subsection*{4.4} Let $A\epsilon_{CFG}$ = \{\textlangle{}$G$\textrangle{} $|$ $G$ is a CFG that generates $\epsilon$.\}. Show that $A\epsilon_{CFG}$ is decidable.
+\subsection*{4.4} Let $A\epsilon_{CFG}$ = \{\angles{G} $|$ $G$ is a CFG that generates $\epsilon$.\}. Show that $A\epsilon_{CFG}$ is decidable.
 \\
 \textbf{Solution:} We will design a TM $T$ that decides $A\epsilon_{CFG}$:
 \\
-$T$ = ``On input \textlangle{}$G$\textrangle{} where $G$ is a CFG:
+$T$ = ``On input \angles{G} where $G$ is a CFG:
 \begin{enumerate}
 \itemsep0em
 \item[1.]Convert $G$ into an equivalent CFG $C = (V, \Sigma, R, S)$ in Chomsky Normal Form.
-\item[2.]$Accept$ if $C$ includes the rule $S \rightarrow \epsilon$, reject otherwise."
+\item[2.]$Accept$ \angles{G} if $C$ includes the rule $S \rightarrow \epsilon$, $reject$ \angles{G} otherwise."
 \end{enumerate}
 Since converting a CFG into CNF is decidable, $A\epsilon_{CFG}$ is decidable.
 
@@ -44,38 +44,38 @@ Since converting a CFG into CNF is decidable, $A\epsilon_{CFG}$ is decidable.
 \textbf{Solution:} Suppose (by contradiction) that $\mathcal{B}$ is countable. Therefore, there exists a bijection $f$ between $\mathcal{B}$ and $\mathbb{N}$. For $\forall n \in \mathbb{N}$, let $f(n) = s_{n1}...s_{nk}$, where $s_{nk}$ is the $k$th bit in the $n$th sequence of $\mathcal{B}$ for $\forall{k} \in \mathbb{N}$. Define $t = t_1t_2...$ be an infinite sequence over \{0, 1\} such that $t_k = |s_{kk}-1|$ for $\forall k \in \mathbb{N}$. Therefore, $t \in \mathcal{B}$ by construction. We can see that $\nexists x \in \{0, 1\}$ such that $x = |1-x|$. Therefore, for $\forall k \in \mathbb{N}, t_k \ne |s_{kk} - 1|$. This implies that in at least 1 bit, $t$ is different than all other sequences in $\mathcal{B}$ because of $t$'s construction, which involves all other sequences in $\mathcal{B}$. This implies for $\forall n \in \mathbb{N}, f(n) \ne t$, a contradiction. Therefore, $\mathcal{B}$ is uncountable.
 
 %		4.11		%
-\subsection*{4.11} Let $INFINITE_{PDA}$ = \{\textlangle{}$M$\textrangle{} $|$ $M$ is a PDA and $L(M)$ is an infinite language\}. Show that $INFINITE_{PDA}$ is decidable.
+\subsection*{4.11} Let $INFINITE_{PDA}$ = \{\angles{M} $|$ $M$ is a PDA and $L(M)$ is an infinite language\}. Show that $INFINITE_{PDA}$ is decidable.
 \\
 \textbf{Solution:} We will design a TM $T$ that decides $INFINITE_{PDA}$:
 \\
-$T$ = ``On input \textlangle{}$M$\textrangle{} where $M$ is a PDA:
+$T$ = ``On input \angles{M} where $M$ is a PDA:
 \begin{enumerate}
 \itemsep0em
 \item[1.]Construct an equivalent CFG $G$ from $M$.
 \item[2.]Convert $G$ into an equivalent CFG $C = (V, \Sigma, R, S)$ in Chomsky Normal Form.
-\item[3.]$Accept$ \textlangle{}$M$\textrangle{} if there exists a derivation $A \xRightarrow{+} uAv$ for some $u, v \in \Sigma^*$. Otherwise, $reject$ \textlangle{}$M$\textrangle{}.
+\item[3.]$Accept$ \angles{M} if there exists a derivation $A \xRightarrow{+} uAv$ for some $u, v \in \Sigma^*$. Otherwise, $reject$ \angles{M}.
 \end{enumerate}
 Since all of the algorithms in this machine are decidable, $INFINITE_{PDA}$ is decidable.
 
 %		4.13		%
-\subsection*{4.13} Let $A$ = \{\textlangle{}$R,S$\textrangle{} $|$ $R$ and $S$ are regular expressions and $L(R) \subseteq L(S)\}$. Show that $A$ is decidable.
+\subsection*{4.13} Let $A$ = \{\angles{R,S} $|$ $R$ and $S$ are regular expressions and $L(R) \subseteq L(S)\}$. Show that $A$ is decidable.
 \\
 \textbf{Solution:} We will design a TM $T$ that decides $A$:
 \\
-$T$ = ``On input \textlangle{}$R,S$\textrangle{} where $R$ and $S$ are regular expressions:
+$T$ = ``On input \angles{R,S} where $R$ and $S$ are regular expressions:
 \begin{enumerate}
 \itemsep0em
 \item[1.]Construct a DFA $B$ such that $L(B) = \overline{L(S)} \cap L(R)$.
-\item[2.]Run $E_{DFA}$ on input \textlangle{}B\textrangle{}. Output what $E_{DFA}$ outputs."
+\item[2.]Run $E_{DFA}$ on input \angles{B}. Output what $E_{DFA}$ outputs."
 \end{enumerate}
 Since $E_{DFA}$ is decidable, $A$ is decidable. This construction is correct because $L(R) \subseteq L(S) \Leftrightarrow \overline{L(S)} \cap L(R) = \varnothing$.
 
 %		4.15		%
-\subsection*{4.15} Show that the problem of determining whether a CFG generates all strings in 1* is decidable. In other words, show that \{\textlangle{}$G$\textrangle{} $|$ $G$ is a CFG over $\{0, 1\}$ and $1^* \subset L(G)$\} is a decidable language. 
+\subsection*{4.15} Show that the problem of determining whether a CFG generates all strings in 1* is decidable. In other words, show that \{\angles{G} $|$ $G$ is a CFG over $\{0, 1\}$ and $1^* \subset L(G)$\} is a decidable language. 
 \\
 \textbf{Solution:} Let $f$ be a computable function. Construct a decider $D$:
 \\
-$D$ = ``On input \textlangle{}G\textrangle{} where G is a CFG:
+$D$ = ``On input \angles{G} where $G$ is a CFG:
 \begin{enumerate}
 \itemsep0em
 \item[1.]Convert $G$ into an equivalent CFG $C$ in Chomsky Normal Form.
@@ -83,33 +83,33 @@ $D$ = ``On input \textlangle{}G\textrangle{} where G is a CFG:
 \item[3.]Repeat $\forall i \le f(p)$:
 \begin{enumerate}
 \item[a.]Check whether $1^i \in L(C)$.
-\item[b.]If not, $reject$ \textlangle{}G\textrangle{}.
+\item[b.]If not, $reject$ \angles{G}.
 \end{enumerate}
-\item[4.]$Accept$ \textlangle{}G\textrangle{}.
+\item[4.]$Accept$ \angles{G}.
 \end{enumerate}
 We can check $1^i \in L(C)$ using the Cocke-Younger-Kasami (CYK) algorithm for CFGs, which has a running time of $\Theta(n^3 |G|)$. Therefore, the loop has a running time of $\Theta(pn^3 |G|)$. Since Steps 1, 2, 3, and 4 take finite time, this language is decidable.
 
 %		4.24		%
 \subsection*{4.24} A \emph{\textbf{useless state}} in a pushdown automaton is never entered on any input string. Consider the problem of determining whether a pushdown automaton has any useless states. Formulate this problem as a language and show that it is decidable.
 \\
-\textbf{Solution:} Let $U_{PDA}$ = \{\textlangle{}$P$\textrangle{} $|$ $P$ is a PDA that has useless states\}. We will design a TM $T$ that decides $U_{PDA}$. First, we will define the problem $E_{PDA}$ = \{\textlangle{}$P$\textrangle{} $|$ $P$ is a PDA and $L(P) = \varnothing$\}. We now show that $E_{PDA}$ is decidable with a decider $D$:
+\textbf{Solution:} Let $U_{PDA}$ = \{\angles{P} $|$ $P$ is a PDA that has useless states\}. We will design a TM $T$ that decides $U_{PDA}$. First, we will define the problem $E_{PDA}$ = \{\angles{P} $|$ $P$ is a PDA and $L(P) = \varnothing$\}. We now show that $E_{PDA}$ is decidable with a decider $D$:
 \\
-$D$ = ``On input \textlangle{}$P$\textrangle{} where $P$ is a PDA:
+$D$ = ``On input \angles{P} where $P$ is a PDA:
 \begin{enumerate}
 \itemsep0em
 \item[1.]Convert $P$ into an equivalent CFG $G$.
-\item[2.]Run $E_{CFG}$ on input \textlangle{}$G$\textrangle{}. Output what $E_{CFG}$ outputs."
+\item[2.]Run $E_{CFG}$ on input \angles{G}. Output what $E_{CFG}$ outputs."
 \end{enumerate}
 This language is decidable because all steps in its construction take finite time, and $E_{CFG}$ is a decider.
 \\
-$T$ = ``On input \textlangle{}$P$\textrangle{} where $P = (Q, \Sigma, \Gamma, \delta, q_0, Z, F)$ is a PDA:
+$T$ = ``On input \angles{P} where $P = (Q, \Sigma, \Gamma, \delta, q_0, Z, F)$ is a PDA:
 \begin{enumerate}
 \itemsep0em
 \item[1.]For $\forall q \in Q$:
 \begin{enumerate}
 \item[a.]Modify $P$ such that $F = \{q\}$.
-\item[b.]Run $E_{PDA}$ on input \textlangle{}$P$\textrangle{}. If $E_{PDA}$ accepts, $accept$ \textlangle{}$P$\textrangle{}.
+\item[b.]Run $E_{PDA}$ on input \angles{P}. If $E_{PDA}$ accepts, $accept$ \angles{P}.
 \end{enumerate}
-\item[2.]$Reject$ \textlangle{}$P$\textrangle{}."
+\item[2.]$Reject$ \angles{P}."
 \end{enumerate}
 Since $E_{PDA}$ is decidable, $U_{PDA}$ is decidable.
