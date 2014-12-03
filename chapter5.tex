@@ -1,1 +1,15 @@
 \section{Chapter 5}
+
+%		5.13		%
+\subsection*{5.13} A \emph{\textbf{useless state}} in a Turing machine is one that is never entered on any input string. Consider the problem of determining whether a Turing machine has any useless states. Formulate this problem as a language and show that it is undecidable.
+\\
+\textbf{Solution:} Let $USELESS_{TM}$ = \{\angles{M, q} $|$ $q$ is a useless state in $M$\}. Suppose that $USELESS_{TM}$ was decidable, and let $U$ be its decider. We will construct a decider $E$ for $E_{TM}$:
+\\
+$E$ = ``On input \angles{M} where $M$ is a TM:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Run $U$ on \angles{M, q_{accept}}, where $q_{accept}$ is $M$'s accept state.
+\item[2.]Output what $U$ outputs.
+\end{enumerate}
+Since $E_{TM}$ is undecidable, $USELESS_{TM}$ is also undecidable.
+
