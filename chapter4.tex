@@ -36,7 +36,7 @@ T = ``On input \textlangle{}R,S\textrangle{} where R and S are regular expressio
 \item[1.]Construct a DFA B such that $L(B) = \overline{L(S)} \cap L(R)$.
 \item[2.]Run $E_{DFA}$ on input \textlangle{}B\textrangle{}. Output what $E_{DFA}$ outputs."
 \end{enumerate}
-Since $E_{DFA}$ is decidable, $A$ is decidable. This construction is correct because $L(R) \subseteq L(S) \Leftrightarrow L(B) = \overline{L(S)} \cap L(R)$.
+Since $E_{DFA}$ is decidable, $A$ is decidable. This construction is correct because $L(R) \subseteq L(S) \Leftrightarrow \overline{L(S)} \cap L(R) = \varnothing$.
 
 %		4.15		%
 \subsection*{4.15} Show that the problem of determining whether a CFG generates all strings in 1* is decidable. In other words, show that \{\textlangle{}G\textrangle{} $|$ G is a CFG over $\{0, 1\}$ and $1^* \subset L(G)$\} is a decidable language. 
