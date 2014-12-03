@@ -2,65 +2,65 @@
 %		4.2		%
 \subsection*{4.2} Consider the problem of determining whether a DFA and a regular expression are equivalent. Express this problem as a language and show that it is decidable.
 \\
-\textbf{Solution:} We formulate the problem $EQ_{DFA,REX}$ = \{\textlangle{}A, R\textrangle{} $|$ A is a DFA, R is a regular expression, and $L(A) = L(R)\}$. We will design a TM T that decides $EQ_{DFA,REX}$:
+\textbf{Solution:} We formulate the problem $EQ_{DFA,REX}$ = \{\textlangle{}$A, R$\textrangle{} $|$ $A$ is a DFA, $R$ is a regular expression, and $L(A) = L(R)\}$. We will design a TM $T$ that decides $EQ_{DFA,REX}$:
 \\
-T = ``On input \textlangle{}A, R\textrangle{} where A is a DFA, R is a regular expression:
+$T$ = ``On input \textlangle{}$A, R$\textrangle{} where $A$ is a DFA, $R$ is a regular expression:
 \begin{enumerate}
 \itemsep0em
-\item[1.]Use Theorem 1.54 to convert R into an equivalent DFA B. Therefore, $L(B) = L(R)$.
-\item[2.]Run $EQ_{DFA}$ on input \textlangle{}A, B\textrangle{}. Output what $EQ_{DFA}$ outputs."
+\item[1.]Use Theorem 1.54 to convert $R$ into an equivalent DFA $B$. Therefore, $L(B) = L(R)$.
+\item[2.]Run $EQ_{DFA}$ on input \textlangle{}$A, B$\textrangle{}. Output what $EQ_{DFA}$ outputs."
 \end{enumerate}
 Since $EQ_{DFA}$ is decidable, and the conversion from regular expressions to DFAs takes finite time, $EQ_{DFA,REX}$ is decidable.
 
 %		4.3		%
-\subsection*{4.3} Let $ALL_{DFA}$ = \{\textlangle{}A\textrangle{} $|$ A is a DFA and $L(A) = \Sigma^*\}$. Show that $ALL_{DFA}$ is decidable.
+\subsection*{4.3} Let $ALL_{DFA}$ = \{\textlangle{}$A$\textrangle{} $|$ $A$ is a DFA and $L(A) = \Sigma^*\}$. Show that $ALL_{DFA}$ is decidable.
 \\
-\textbf{Solution:} We will design a TM T that decides $ALL_{DFA}$:
+\textbf{Solution:} We will design a TM $T$ that decides $ALL_{DFA}$:
 \\
-T = ``On input \textlangle{}A\textrangle{} where A is a DFA:
+$T$ = ``On input \textlangle{}A\textrangle{} where A is a DFA:
 \begin{enumerate}
 \itemsep0em
-\item[1.]Construct a DFA B such that $L(A) = \overline{L(B)}$.
+\item[1.]Construct a DFA $B$ such that $L(A) = \overline{L(B)}$.
 \item[2.]Run $E_{DFA}$ on input \textlangle{}B\textrangle{}. Output what $E_{DFA}$ outputs."
 \end{enumerate}
 Since $E_{DFA}$ is decidable, $ALL_{DFA}$ is decidable.
 
 %		4.4		%
-\subsection*{4.4} Let $A\epsilon_{CFG}$ = \{\textlangle{}G\textrangle{} $|$ G is a CFG that generates $\epsilon$.\}. Show that $A\epsilon_{CFG}$ is decidable.
+\subsection*{4.4} Let $A\epsilon_{CFG}$ = \{\textlangle{}$G$\textrangle{} $|$ $G$ is a CFG that generates $\epsilon$.\}. Show that $A\epsilon_{CFG}$ is decidable.
 \\
-\textbf{Solution:} We will design a TM T that decides $A\epsilon_{CFG}$:
+\textbf{Solution:} We will design a TM $T$ that decides $A\epsilon_{CFG}$:
 \\
-T = ``On input \textlangle{}G\textrangle{} where G is a CFG:
+$T$ = ``On input \textlangle{}G\textrangle{} where $G$ is a CFG:
 \begin{enumerate}
 \itemsep0em
-\item[1.]Convert G into an equivalent CFG $C = (V, \Sigma, R, S)$ in Chomsky Normal Form.
+\item[1.]Convert $G$ into an equivalent CFG $C = (V, \Sigma, R, S)$ in Chomsky Normal Form.
 \item[2.]$Accept$ if $C$ includes the rule $S \rightarrow \epsilon$, reject otherwise."
 \end{enumerate}
 Since converting a CFG into CNF is decidable, $A\epsilon_{CFG}$ is decidable.
 
 %		4.13		%
-\subsection*{4.13} Let $A$ = \{\textlangle{}R,S\textrangle{} $| R$ and $S$ are regular expressions and $L(R) \subseteq L(S)\}$. Show that $A$ is decidable.
+\subsection*{4.13} Let $A$ = \{\textlangle{}$R,S$\textrangle{} $| R$ and $S$ are regular expressions and $L(R) \subseteq L(S)\}$. Show that $A$ is decidable.
 \\
-\textbf{Solution:} We will design a TM T that decides $A$:
+\textbf{Solution:} We will design a TM $T$ that decides $A$:
 \\
-T = ``On input \textlangle{}R,S\textrangle{} where R and S are regular expressions:
+$T$ = ``On input \textlangle{}$R,S$\textrangle{} where $R$ and $S$ are regular expressions:
 \begin{enumerate}
 \itemsep0em
-\item[1.]Construct a DFA B such that $L(B) = \overline{L(S)} \cap L(R)$.
+\item[1.]Construct a DFA $B$ such that $L(B) = \overline{L(S)} \cap L(R)$.
 \item[2.]Run $E_{DFA}$ on input \textlangle{}B\textrangle{}. Output what $E_{DFA}$ outputs."
 \end{enumerate}
 Since $E_{DFA}$ is decidable, $A$ is decidable. This construction is correct because $L(R) \subseteq L(S) \Leftrightarrow \overline{L(S)} \cap L(R) = \varnothing$.
 
 %		4.15		%
-\subsection*{4.15} Show that the problem of determining whether a CFG generates all strings in 1* is decidable. In other words, show that \{\textlangle{}G\textrangle{} $|$ G is a CFG over $\{0, 1\}$ and $1^* \subset L(G)$\} is a decidable language. 
+\subsection*{4.15} Show that the problem of determining whether a CFG generates all strings in 1* is decidable. In other words, show that \{\textlangle{}$G$\textrangle{} $|$ $G$ is a CFG over $\{0, 1\}$ and $1^* \subset L(G)$\} is a decidable language. 
 \\
-\textbf{Solution:} Let $f$ be a computable function. Construct a decider D:
+\textbf{Solution:} Let $f$ be a computable function. Construct a decider $D$:
 \\
-D = ``On input \textlangle{}G\textrangle{} where G is a CFG:
+$D$ = ``On input \textlangle{}G\textrangle{} where G is a CFG:
 \begin{enumerate}
 \itemsep0em
-\item[1.]Convert G into an equivalent CFG C in Chomsky Normal Form.
-\item[2.]Let $p$ be the pumping length of C.
+\item[1.]Convert $G$ into an equivalent CFG $C$ in Chomsky Normal Form.
+\item[2.]Let $p$ be the pumping length of $C$.
 \item[3.]Repeat $\forall i \le f(p)$:
 \begin{enumerate}
 \item[a.]Check whether $1^i \in L(C)$.
@@ -68,3 +68,4 @@ D = ``On input \textlangle{}G\textrangle{} where G is a CFG:
 \end{enumerate}
 \item[4.]$Accept$ \textlangle{}G\textrangle{}.
 \end{enumerate}
+We can check $1^i \in L(C)$ using the Cocke-Younger-Kasami (CYK) algorithm for CFGs, which has a running time of $\Theta(n^3 |G|)$. Therefore, the loop has a running time of $\Theta(pn^3 |G|)$. Since Steps 1, 2, 3, and 4 take finite time, this language is decidable.
