@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  2 DEC 2014 19:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  2 DEC 2014 20:10
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -393,7 +393,7 @@ OML/cmm/m/it/10 EQ[]$
 Here is how much of TeX's memory you used:
  3140 strings out of 493117
  44252 string characters out of 6135433
- 108523 words of memory out of 5000000
+ 110523 words of memory out of 5000000
  6536 multiletter control sequences out of 15000+600000
  9358 words of font info for 34 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -410,7 +410,7 @@ mr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/cm-super/sfrm1000.
 pfb>
-Output written on Solutions.pdf (10 pages, 106956 bytes).
+Output written on Solutions.pdf (10 pages, 108136 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
  55 compressed objects within 1 object stream
