@@ -37,3 +37,17 @@ Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1
 \item[2.]The language is empty. 
 \end{enumerate}
 For 1, we just build a TM that accepts if $M$ is a valid TM description. In the latter case, we build a TM that rejects all strings. If $P$ is a property of the machine rather than the language, it is possible for the language to be decidable.
+
+%		5.30		%
+\subsection*{5.30} Use Rice's theorem, which appears in Problem 5.28, to prove the undecidability of each of the following languages.
+\begin{enumerate}
+\item[a.]$INFINITE_{TM}$ = \{\angles{M} $|$ $M$ is a TM and $L(M)$ is an infinite language\}.
+\item[b.]\{\angles{M} $|$ $M$ is a TM and $1011 \in L(M)$\}.
+\item[c.]$ALL_{TM}$ = \{\angles{M} $|$ $M$ is a TM and $L(M) = \Sigma^*$\}.
+\end{enumerate}
+\textbf{Solution:}
+\begin{enumerate}
+\item[a.]Given in the text.
+\item[b.]Let $P$ be this language. We can clearly see $P$ is a language of descriptions of TMs. It is non-trivial because some TMs contain the string 1011 in their language, and others do not. Also, it only depends on the language. If two TMs recognize the same language, either both have their descriptions in $P$, or neither do. Therefore, we can apply Rice's theorem and conclude that $P$ is undecidable.
+\item[c.]$ALL_{TM}$ is non-trivial because some TMs accept $\Sigma^*$ and others do not. Also, it only depends on the language. If two TMs recognize $\Sigma^*$, then the descriptions of both are in $ALL_{TM}$ or neither are. Therefore, we can apply Rice's theorem and conclude that $ALL_{TM}$ is undecidable.
+\end{enumerate}
