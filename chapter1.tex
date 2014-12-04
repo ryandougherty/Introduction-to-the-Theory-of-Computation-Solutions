@@ -14,3 +14,12 @@
 \item $\delta((x, y, B), b) = (x, \delta_B(y, b), A)$.
 \end{itemize}
 \end{itemize}
+
+%		1.53		%
+\subsection*{1.53} Let $\Sigma$ = \{0, 1, +, = \} and $ADD$ = \{ $x = y + z$ $|$ $x, y, z$ are binary integers, and $x$ is the sum of $y$ and $z$\}. Show that $ADD$ is not regular.
+\\
+\textbf{Solution:} Assume that $ADD$ is regular. Therefore, there exists a pumping length $p \in \mathbb{Z}$ such that the three conditions of the Pumping Lemma are satisfied. Choose $w$ as $1^p=0^p+1^p$. Clearly, $w \in ADD$. By the conditions of the Pumping Lemma, we can partition $w = xyz$ such that $|xy| \le p, |y| > 0$, and $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$.
+\\
+By the first and second conditions of the Pumping Lemma, $x$ and $y$ consist entirely of 1s, i.e. $x = 1^a, y = 1^b, z = 1^{p-a-b}=0^p+1^p$ for $a \ge 0, b > 0$.
+\\
+By the third condition, $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$. Choose $i=2$: $xy^2z = 1^a1^{2b}1^{p-a-b}=0^p+1^p$ = $1^{p+b}=0^p+1^p$. However, this string is not in $ADD$, because this implies $p+b = p$, but $b > 0$, a contradiction. Therefore, $ADD$ is not regular.
