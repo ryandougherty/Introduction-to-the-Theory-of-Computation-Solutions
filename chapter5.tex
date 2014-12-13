@@ -28,6 +28,11 @@ $D$ = ``On input a collection of dominos:
 \end{enumerate}
 Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1s on the bottom. Let $d_2$ have $t_2$ 1s on the top and $t_2 + c_2$. Choosing $c_2$ of the $d_1$ domino and $c_1$ of the $d_2$ domino yields $c_2 \times t_1 + c_1 \times t_2$ 1s on the top, and $c_2 \times (t_1 - c_1) + c_1 \times (t_2 + c_2) = c_2 \times t_1 + c_1 \times t_2$ 1s on the bottom, which is a match.
 
+%		5.25		%
+\subsection*{5.25} Give an example of an undecidable language $B$, where $B \le_{m} \overline{B}$.
+\\
+\textbf{Solution:} Any Turing-recognizable but not co-Turing-recognizable language works (or vice versa), such as $A_{TM}$.
+
 %		5.29		%
 \subsection*{5.29} Show that both conditions in Problem 5.28 are necessary for proving that P is undecidable.
 \\
