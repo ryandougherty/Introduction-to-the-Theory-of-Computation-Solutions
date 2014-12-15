@@ -1,1 +1,15 @@
 \section{Chapter 6}
+
+%		6.6		%
+\subsection*{6.6} Describe two different Turing machines, $M$ and $N$, where $M$ outputs \angles{N} and $N$ outputs \angles{M}, when started on any input.
+\\
+\textbf{Solution:} Construct $M$ as follows:
+\\
+$M$ = ``On input $w$:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Obtain \angles{M} by the recursion theorem.
+\item[2.]Compute $q($\angles{M}$)$, and write the result to the tape.
+\item[3.]Halt."
+\end{enumerate}
+Now let $N = q($\angles{M}$)$. The computation in Step 2 writes \angles{q($\angles{M}$)} = \angles{N}. $N$ writes \angles{M} to the tape, so the construction of $M$ and $N$ is correct.
