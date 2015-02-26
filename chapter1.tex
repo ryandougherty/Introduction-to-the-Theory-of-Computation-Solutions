@@ -23,3 +23,12 @@
 By the first and second conditions of the Pumping Lemma, $x$ and $y$ consist entirely of 1s, i.e. $x = 1^a, y = 1^b, z = 1^{p-a-b}=0^p+1^p$ for $a \ge 0, b > 0$.
 \\
 By the third condition, $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$. Choose $i=2$: $xy^2z = 1^a1^{2b}1^{p-a-b}=0^p+1^p$ = $1^{p+b}=0^p+1^p$. However, this string is not in $ADD$, because this implies $p+b = p$, but $b > 0$, a contradiction. Therefore, $ADD$ is not regular.
+
+%		1.70		%
+\subsection*{1.70} We define the \textbf{\emph{avoids}} operation for languages $A$ and $B$ to be
+\begin{center}
+$A$ \emph{avoids} $B$ = \{$w$ | $w \in A$ and $w$ doesn't contain any string in $B$ as a substring\}.
+\end{center}
+Prove that the class of regular languages is closed under the \emph{avoids} operation.
+\\
+\textbf{Solution:} The idea is to find a regular language that has strings in $B$ as a substring, and remove from $A$ this language. Therefore, define $L_{substr} = \Sigma^*B\Sigma^*$. Clearly, $L_{substr}$ is regular because it is the concatenation of 2 regular languages. Since regular languages are closed under complement and intersection, then $A \setminus L_{substr} = A \cap \overline{L_{substr}}$ is also regular. But these are precisely the strings that are in $A$ that are not in $L_{substr}$, which is what we want.
