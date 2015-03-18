@@ -1,5 +1,34 @@
 \section{Chapter 7}
 
+%		7.15		%
+\subsection*{7.15} Show that P is closed under the star operation. (Hint: Use dynamic programming. On input $y = y_1\cdots y_n$ for $y_i \in \Sigma$, build a table indicating for each $i \le j$ whether the substring $y_i\cdots y_j \in A^*$ for any $A \in$ P.)
+\\
+\textbf{Solution:} Let $M$ be a TM that decides $A$ in polynomial time. We construct a TM $T$ to decide $A^*$ in polynomial time:
+\\ \\
+$T$ = ``On input $w \in \Sigma^*$:
+\begin{enumerate}
+\item[1.]Let $|w| = n \in \mathbb{N}$.
+\item[2.]If $n = 0$, $accept$ $w$.
+\item[3.]Construct an $n \times n$ table $B$, initializing all elements to 0.
+\item[4.]For $1 \le i \le n$ do:
+\begin{enumerate}
+\item[a.]If $w_i \in A$, set $B(i, i) = 1$.
+\end{enumerate}
+\item[5.]For $2 \le j \le n$ do:
+\begin{enumerate}
+\item[a.]For $1 \le k \le n-j+1$ do:
+\begin{enumerate}
+\item[i.]Set $m \leftarrow j+k-1$.
+\item[ii.]If $w_k\cdots w_m \in A$, set $B(k,k) = 1$.
+\item[iii.]For $k \le p \le m-1$ do:
+\begin{enumerate}
+\item[1.]If $B(k, p) = B(p, m) = 1$, set $B(k, m) = 1$.
+\end{enumerate}
+\end{enumerate}
+\end{enumerate}
+\item[6.]Output if $B(1, n) = 1$."
+\end{enumerate}
+
 %		7.20		%
 \subsection*{7.20} We generally believe that \emph{PATH} is not NP-complete. Explain the reason behind this belief. Show that proving \emph{PATH} is not NP-complete would prove P $\ne$ NP.
 \\
