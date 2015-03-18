@@ -47,3 +47,10 @@ $Y$ = ``On any input:
 \item[3.]Output $x$."
 \end{enumerate}
 This a contradiction - therefore, no infinite subset of the set of incompressible strings is Turing-recognizable.
+
+%		6.27		%
+\subsection*{6.27} Let $S = \{$\angles{M} $|$ $M$ is a TM and $L(M) = \{$\angles{M}\}\}. Show that neither $S$ nor $\overline{S}$ is Turing-recognizable.
+\\
+\textbf{Solution:} We will show that $A_{TM} \le_m S$ and $A_{TM} \le_m \overline{S}$, implying that neither $S$ nor $\overline{S}$ is Turing-recognizable. For $A_{TM} \le_m S$, given \angles{M, w} $\in A_{TM}$, construct a TM $T$ that, on input $x$, rejects if $x \ne$ \angles{T} and simulates $M$ on $w$ otherwise. Therefore, $L(T) = \{$\angles{T}\} if $M$ accepts $w$, and $\emptyset$ otherwise.
+
+\par For $A_{TM} \le_m \overline{S}$, change $T$'s construction to be ``accepts" instead of ``rejects". 
