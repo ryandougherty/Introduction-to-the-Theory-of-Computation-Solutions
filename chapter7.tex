@@ -43,3 +43,12 @@ $T$ = ``On input \angles{\phi} where $\phi$ is a $SAT$ formula:
 \item[3.]Output \angles{G, s, t}."
 \end{enumerate}
 Since this reduction takes polynomial time, then P = NP implies \emph{PATH} is NP-complete.
+
+%		7.22		%
+\subsection*{7.22} Let $DOUBLE$-$SAT = \{$\angles{\phi} $|$ $\phi$ has at least two satisfying assignments\}. Show that $DOUBLE$-$SAT$ is NP-complete.
+\\
+\textbf{Solution:} We will reduce $3SAT$ to this problem. Given $\phi$ as a $3SAT$ formula, all we need to do is to introduce a new variable $x$, and create a new formula $\phi'$ as follows:
+\begin{center}
+$\phi' = \phi \wedge (x \vee \overline{x})$
+\end{center}
+We show that $\phi \in 3SAT$ if and only if $\phi' \in DOUBLE$-$SAT$. If $\phi \in 3SAT$, then there is one satisfying assignment - for $\phi'$ there are two since we can set $x = 0, 1$ and still have $\phi'$ be true. If $\phi$ is unsatisfiable, then clearly $\phi'$ is also unsatisfiable. Therefore, we are done.
