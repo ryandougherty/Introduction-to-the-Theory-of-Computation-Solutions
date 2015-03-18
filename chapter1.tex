@@ -25,6 +25,15 @@ By the first and second conditions of the Pumping Lemma, $x$ and $y$ consist ent
 \\
 By the third condition, $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$. Choose $i=2$: $xy^2z = 1^a1^{2b}1^{p-a-b}=0^p+1^p$ = $1^{p+b}=0^p+1^p$. However, this string is not in $ADD$, because this implies $p+b = p$, but $b > 0$, a contradiction. Therefore, $ADD$ is not regular.
 
+%		1.58		%
+\item[1.58]If $A$ is any language, let $A_{\frac{1}{3} - \frac{1}{3}}$ be the set of all strings in $A$ with their middle thirds removed so that
+\begin{center}
+$A_{\frac{1}{3} - \frac{1}{3}} = \{xz |$ for some $y$, $|x| = |y| = |z|$ and $xyz \in A$\}.
+\end{center}
+Show that if $A$ is regular, then $A_{\frac{1}{3} - \frac{1}{3}}$ is not necessarily regular.
+\\
+\textbf{Solution:} Let $A = \{0^*\#1^*\}$, which is regular. Therefore, $A_{\frac{1}{3} - \frac{1}{3}} \cap \{0^*1^*\} = \{0^n1^n | n \ge 0\}$ is also regular since regular languages are closed under intersection, and $\{0^*1^*\}$ is a regular language. However, the resulting language is not regular, so therefore $A_{\frac{1}{3} - \frac{1}{3}}$ is not necessarily regular when $A$ is.
+
 %		1.70		%
 \item[1.70]We define the \textbf{\emph{avoids}} operation for languages $A$ and $B$ to be
 \begin{center}
