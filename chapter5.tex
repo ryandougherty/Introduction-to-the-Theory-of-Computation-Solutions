@@ -1,7 +1,7 @@
 \section{Chapter 5}
-
+\begin{enumerate}
 %		5.13		%
-\subsection*{5.13} A \emph{\textbf{useless state}} in a Turing machine is one that is never entered on any input string. Consider the problem of determining whether a Turing machine has any useless states. Formulate this problem as a language and show that it is undecidable.
+\item[5.13]A \emph{\textbf{useless state}} in a Turing machine is one that is never entered on any input string. Consider the problem of determining whether a Turing machine has any useless states. Formulate this problem as a language and show that it is undecidable.
 \\
 \textbf{Solution:} Let $USELESS_{TM}$ = \{\angles{M, q} $|$ $q$ is a useless state in $M$\}. Suppose that $USELESS_{TM}$ was decidable, and let $U$ be its decider. We will construct a decider $E$ for $E_{TM}$:
 \\
@@ -14,7 +14,7 @@ $E$ = ``On input \angles{M} where $M$ is a TM:
 Since $E_{TM}$ is undecidable, $USELESS_{TM}$ is also undecidable.
 
 %		5.17		%
-\subsection*{5.17} Show that the Post Correspondence Problem is decidable over the unary alphabet $\Sigma = \{1\}$.
+\item[5.17]Show that the Post Correspondence Problem is decidable over the unary alphabet $\Sigma = \{1\}$.
 \\
 \textbf{Solution:} Since $\Sigma = \{1\}$, there is only a difference in the number of 1s on the top of each domino compared to the bottom. We will construct a decider $D$ that decides PCP for a unary alphabet:
 \\
@@ -29,12 +29,12 @@ $D$ = ``On input a collection of dominos:
 Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1s on the bottom. Let $d_2$ have $t_2$ 1s on the top and $t_2 + c_2$. Choosing $c_2$ of the $d_1$ domino and $c_1$ of the $d_2$ domino yields $c_2 \times t_1 + c_1 \times t_2$ 1s on the top, and $c_2 \times (t_1 - c_1) + c_1 \times (t_2 + c_2) = c_2 \times t_1 + c_1 \times t_2$ 1s on the bottom, which is a match.
 
 %		5.25		%
-\subsection*{5.25} Give an example of an undecidable language $B$, where $B \le_{m} \overline{B}$.
+\item[5.25]Give an example of an undecidable language $B$, where $B \le_{m} \overline{B}$.
 \\
 \textbf{Solution:} Any Turing-recognizable but not co-Turing-recognizable language works (or vice versa), such as $A_{TM}$.
 
 %		5.29		%
-\subsection*{5.29} Show that both conditions in Problem 5.28 are necessary for proving that P is undecidable.
+\item[5.29]Show that both conditions in Problem 5.28 are necessary for proving that P is undecidable.
 \\
 \textbf{Solution:} If the property $P$ is trivial, then one of the following is true:
 \begin{enumerate}
@@ -44,7 +44,7 @@ Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1
 For 1, we just build a TM that accepts if $M$ is a valid TM description. In the latter case, we build a TM that rejects all strings. If $P$ is a property of the machine rather than the language, it is possible for the language to be decidable.
 
 %		5.30		%
-\subsection*{5.30} Use Rice's theorem, which appears in Problem 5.28, to prove the undecidability of each of the following languages.
+\item[5.30]Use Rice's theorem, which appears in Problem 5.28, to prove the undecidability of each of the following languages.
 \begin{enumerate}
 \item[a.]$INFINITE_{TM}$ = \{\angles{M} $|$ $M$ is a TM and $L(M)$ is an infinite language\}.
 \item[b.]\{\angles{M} $|$ $M$ is a TM and $1011 \in L(M)$\}.
@@ -55,4 +55,5 @@ For 1, we just build a TM that accepts if $M$ is a valid TM description. In the 
 \item[a.]Given in the text.
 \item[b.]Let $P$ be this language. We can clearly see $P$ is a language of descriptions of TMs. It is non-trivial because some TMs contain the string 1011 in their language, and others do not. Also, it only depends on the language. If two TMs recognize the same language, either both have their descriptions in $P$, or neither do. Therefore, we can apply Rice's theorem and conclude that $P$ is undecidable.
 \item[c.]$ALL_{TM}$ is non-trivial because some TMs accept $\Sigma^*$ and others do not. Also, it only depends on the language. If two TMs recognize $\Sigma^*$, then the descriptions of both are in $ALL_{TM}$ or neither are. Therefore, we can apply Rice's theorem and conclude that $ALL_{TM}$ is undecidable.
+\end{enumerate}
 \end{enumerate}

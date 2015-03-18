@@ -1,7 +1,7 @@
 \section{Chapter 6}
-
+\begin{enumerate}
 %		6.6		%
-\subsection*{6.6} Describe two different Turing machines, $M$ and $N$, where $M$ outputs \angles{N} and $N$ outputs \angles{M}, when started on any input.
+\item[6.6]Describe two different Turing machines, $M$ and $N$, where $M$ outputs \angles{N} and $N$ outputs \angles{M}, when started on any input.
 \\
 \textbf{Solution:} Construct $M$ as follows:
 \\
@@ -15,7 +15,7 @@ $M$ = ``On input $w$:
 Now let $N = q($\angles{M}$)$. The computation in Step 2 writes \angles{q($\angles{M}$)} = \angles{N}. $N$ writes \angles{M} to the tape, so the construction of $M$ and $N$ is correct.
 
 %		6.23		%
-\subsection*{6.23} Show that the function $K(x)$ is not a computable function.
+\item[6.23]Show that the function $K(x)$ is not a computable function.
 \\
 \textbf{Solution:} Suppose that $K(x)$ were computable. We now construct a TM $Z$:
 \\
@@ -30,12 +30,12 @@ $Z$ = ``On any input:
 This a contradiction since we are outputting a value of $K(x)$ that is greater than the own Turing Machine's value. Therefore, $K(x)$ is not computable.
 
 %		6.24		%
-\subsection*{6.24} Show that the set of incompressible strings is undecidable.
+\item[6.24]Show that the set of incompressible strings is undecidable.
 \\
 \textbf{Solution:} Since the set of incompressible strings is an infinite set, this reduces to 6.25.
 
 %		6.25		%
-\subsection*{6.25} Show that the set of incompressible strings contains no infinite subset that is Turing-recognizable.
+\item[6.25]Show that the set of incompressible strings contains no infinite subset that is Turing-recognizable.
 \\
 \textbf{Solution:} Suppose that such a subset were Turing-recognizable, and let $E$ be the enumerator, since Turing-enumerable languages are exactly the Turing-recognizable ones. We now construct a TM $Y$:
 \\
@@ -49,8 +49,9 @@ $Y$ = ``On any input:
 This a contradiction - therefore, no infinite subset of the set of incompressible strings is Turing-recognizable.
 
 %		6.27		%
-\subsection*{6.27} Let $S = \{$\angles{M} $|$ $M$ is a TM and $L(M) = \{$\angles{M}\}\}. Show that neither $S$ nor $\overline{S}$ is Turing-recognizable.
+\item[6.27]Let $S = \{$\angles{M} $|$ $M$ is a TM and $L(M) = \{$\angles{M}\}\}. Show that neither $S$ nor $\overline{S}$ is Turing-recognizable.
 \\
 \textbf{Solution:} We will show that $A_{TM} \le_m S$ and $A_{TM} \le_m \overline{S}$, implying that neither $S$ nor $\overline{S}$ is Turing-recognizable. For $A_{TM} \le_m S$, given \angles{M, w} $\in A_{TM}$, construct a TM $T$ that, on input $x$, rejects if $x \ne$ \angles{T} and simulates $M$ on $w$ otherwise. Therefore, $L(T) = \{$\angles{T}\} if $M$ accepts $w$, and $\emptyset$ otherwise.
 
 \par For $A_{TM} \le_m \overline{S}$, change $T$'s construction to be ``accepts" instead of ``rejects". 
+\end{enumerate}

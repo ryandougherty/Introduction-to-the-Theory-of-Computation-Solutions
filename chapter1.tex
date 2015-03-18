@@ -1,7 +1,8 @@
 \section{Chapter 1}
 
+\begin{enumerate}
 %		1.42		%
-\subsection*{1.42} For languages $A$ and $B$, let the \emph{\textbf{shuffle}} of $A$ and $B$ be the language \{$w$ $|$ $w=a_1b_1...a_kb_k$, where $a_1...a_k \in A$ and $b_1...b_k \in B$, each $a_i,b_i \in \Sigma^*$\}. Show that the class of regular languages is closed under shuffle.
+\item[1.42]For languages $A$ and $B$, let the \emph{\textbf{shuffle}} of $A$ and $B$ be the language \{$w$ $|$ $w=a_1b_1...a_kb_k$, where $a_1...a_k \in A$ and $b_1...b_k \in B$, each $a_i,b_i \in \Sigma^*$\}. Show that the class of regular languages is closed under shuffle.
 \\
 \textbf{Solution:} Let $D_A = (Q_A, \Sigma, \delta_A, q_A, F_A$ and $D_B = (Q_B, \Sigma, \delta_B, q_B, F_B$ be the DFAs recognize $A$ and $B$, respectively. We will design a DFA $D = (Q, \Sigma, \delta, q_0, F)$ such that it recognizes the shuffle of $A$ and $B$ as follows:
 \begin{itemize}
@@ -16,7 +17,7 @@
 \end{itemize}
 
 %		1.53		%
-\subsection*{1.53} Let $\Sigma$ = \{0, 1, +, = \} and $ADD$ = \{ $x = y + z$ $|$ $x, y, z$ are binary integers, and $x$ is the sum of $y$ and $z$\}. Show that $ADD$ is not regular.
+\item[1.53]Let $\Sigma$ = \{0, 1, +, =\} and $ADD$ = \{ $x = y + z$ $|$ $x, y, z$ are binary integers, and $x$ is the sum of $y$ and $z$\}. Show that $ADD$ is not regular.
 \\
 \textbf{Solution:} Assume that $ADD$ is regular. Therefore, there exists a pumping length $p \in \mathbb{Z}$ such that the three conditions of the Pumping Lemma are satisfied. Choose $w$ as $1^p=0^p+1^p$. Clearly, $w \in ADD$. By the conditions of the Pumping Lemma, we can partition $w = xyz$ such that $|xy| \le p, |y| > 0$, and $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$.
 \\
@@ -25,10 +26,11 @@ By the first and second conditions of the Pumping Lemma, $x$ and $y$ consist ent
 By the third condition, $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$. Choose $i=2$: $xy^2z = 1^a1^{2b}1^{p-a-b}=0^p+1^p$ = $1^{p+b}=0^p+1^p$. However, this string is not in $ADD$, because this implies $p+b = p$, but $b > 0$, a contradiction. Therefore, $ADD$ is not regular.
 
 %		1.70		%
-\subsection*{1.70} We define the \textbf{\emph{avoids}} operation for languages $A$ and $B$ to be
+\item[1.70]We define the \textbf{\emph{avoids}} operation for languages $A$ and $B$ to be
 \begin{center}
 $A$ \emph{avoids} $B$ = \{$w$ $|$ $w \in A$ and $w$ doesn't contain any string in $B$ as a substring\}.
 \end{center}
 Prove that the class of regular languages is closed under the \emph{avoids} operation.
 \\
 \textbf{Solution:} The idea is to find a regular language that has strings in $B$ as a substring, and remove from $A$ this language. Therefore, define $L_{substr} = \Sigma^*B\Sigma^*$. Clearly, $L_{substr}$ is regular because it is the concatenation of 2 regular languages. Since regular languages are closed under complement and intersection, then $A \setminus L_{substr} = A \cap \overline{L_{substr}}$ is also regular. But these are precisely the strings that are in $A$ that are not in $L_{substr}$, which is what we want.
+\end{enumerate}
