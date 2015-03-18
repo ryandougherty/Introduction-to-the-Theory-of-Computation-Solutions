@@ -13,3 +13,37 @@ $M$ = ``On input $w$:
 \item[3.]Halt."
 \end{enumerate}
 Now let $N = q($\angles{M}$)$. The computation in Step 2 writes \angles{q($\angles{M}$)} = \angles{N}. $N$ writes \angles{M} to the tape, so the construction of $M$ and $N$ is correct.
+
+%		6.23		%
+\subsection*{6.23} Show that the function $K(x)$ is not a computable function.
+\\
+\textbf{Solution:} Suppose that $K(x)$ were computable. We now construct a TM $Z$:
+\\
+$Z$ = ``On any input:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Obtain \angles{Z} by the recursion theorem.
+\item[2.]Compute $d = K($\angles{Z}$)$.
+\item[3.]Enumerate strings $x \in \Sigma^*$ in any order until $K(x) > d$.
+\item[4.]Output $x$."
+\end{enumerate}
+This a contradiction since we are outputting a value of $K(x)$ that is greater than the own Turing Machine's value. Therefore, $K(x)$ is not computable.
+
+%		6.24		%
+\subsection*{6.24} Show that the set of incompressible strings is undecidable.
+\\
+\textbf{Solution:} Since the set of incompressible strings is an infinite set, this reduces to 6.25.
+
+%		6.25		%
+\subsection*{6.25} Show that the set of incompressible strings contains no infinite subset that is Turing-recognizable.
+\\
+\textbf{Solution:} Suppose that such a subset were Turing-recognizable, and let $E$ be the enumerator, since Turing-enumerable languages are exactly the Turing-recognizable ones. We now construct a TM $Y$:
+\\
+$Y$ = ``On any input:
+\begin{enumerate}
+\itemsep0em
+\item[1.]Obtain \angles{Y} by the recursion theorem.
+\item[2.]Run $E$ until it outputs a string $x$ with $|x| > |$\angles{Y}$|$.
+\item[3.]Output $x$."
+\end{enumerate}
+This a contradiction - therefore, no infinite subset of the set of incompressible strings is Turing-recognizable.

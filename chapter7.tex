@@ -1,1 +1,16 @@
 \section{Chapter 7}
+
+%		7.20		%
+\subsection*{7.20} We generally believe that \emph{PATH} is not NP-complete. Explain the reason behind this belief. Show that proving \emph{PATH} is not NP-complete would prove P $\ne$ NP.
+\\
+\textbf{Solution:} We can prove the converse: if P = NP, then \emph{PATH} is NP-complete. We will do two things (in assuming P = NP): show that \emph{PATH} is NP-hard, and because \emph{PATH} $\in$ NP, \emph{PATH} is NP-complete. We will do this by showing $SAT \le_p PATH$.
+
+\par Since P = NP, there is a decider $S$ for $SAT$ that runs in time $O(n^k)$ for some $k \in \mathbb{N}$. We construct a TM $T$ that computes the reduction:
+\\ \\
+$T$ = ``On input \angles{\phi} where $\phi$ is a $SAT$ formula:
+\begin{enumerate}
+\item[1.]Run $S$ on input \angles{\phi}. If $S$ accepts \angles{\phi}, the construct a graph $G = (V, E)$ such that $s, t \in V, (s, t) \in E$.
+\item[2.]If $S$ rejects \angles{\phi}, construct a graph $G = (V, E)$ such that $V = \{s, t\}, E = \emptyset$.
+\item[3.]Output \angles{G, s, t}."
+\end{enumerate}
+Since this reduction takes polynomial time, then P = NP implies \emph{PATH} is NP-complete.
