@@ -1,6 +1,56 @@
 \section{Chapter 1}
 
 \begin{enumerate}
+
+%		1.2		%
+\item[1.2]Give the formal description of the machines $M_1$ and $M_2$ pictured in Exercise 1.1.
+\\
+\textbf{Solution:} Answered in the text.
+
+%		1.4		%
+\item[1.4]Each of the following languages is the intersection of two simpler languages. In each part, construct DFAs for the simpler languages, then combine them using the construction discussed in footnote 3 (page 46) to give the state diagram of a DFA for the language given. In all parts, $\Sigma = \{a, b\}$.
+\begin{enumerate}
+\item[b.]\textbf{Solution:} Answered in the text.
+\item[d.]\textbf{Solution:} Answered in the text.
+\end{enumerate}
+
+%		1.6		%
+\item[1.6]Give state diagrams of NFAs with the specified number of states recognizing each of the following languages. In all parts, the alphabet is \{0, 1\}.
+\begin{enumerate}
+\item[a.]\textbf{Solution:} Answered in the text.
+\item[f.]\textbf{Solution:} Answered in the text.
+\end{enumerate}
+
+%		1.7		%
+\item[1.7]Each of the following languages is the complement of a simpler language. In each part, construct a DFA for the simpler language, then use it to give the state diagram of a DFA for the language given. In all parts, $\Sigma = \{a, b\}$.
+\begin{enumerate}
+\item[a.]\textbf{Solution:} Answered in the text.
+\item[b.]\textbf{Solution:} Answered in the text.
+\end{enumerate}
+
+%		1.11		%
+\item[1.11]Prove that every NFA can be converted to an equivalent one that has a single accept state.
+\\
+\textbf{Solution:} Answered in the text.
+
+%		1.23		%
+\item[1.23]Let $B$ be any language over the alphabet $\Sigma$. Prove that $B = B^+$ iff $BB \subseteq B$.
+\\
+\textbf{Solution:} Answered in the text.
+
+%		1.29		%
+\item[1.29]Use the pumping lemma to show that the following languages are not regular.
+\begin{enumerate}
+\item[a.]\textbf{Solution:} Answered in the text.
+\item[c.]\textbf{Solution:} Answered in the text.
+\end{enumerate}
+
+%		1.40		%
+\item[1.40]Recall that string $x$ is a \textbf{prefix} of string $y$ if a string $z$ exists where $xz = y$, and that $x$ is a \textbf{proper prefix} of $y$ if in addition $x \ne y$. In each of the following parts, we define an operation on a language $A$. Show that the class of regular languages is closed under that operation.
+\begin{enumerate}
+\item[a.]\textbf{Solution:} Answered in the text.
+\end{enumerate}
+
 %		1.42		%
 \item[1.42]For languages $A$ and $B$, let the \emph{\textbf{shuffle}} of $A$ and $B$ be the language \{$w$ $|$ $w=a_1b_1...a_kb_k$, where $a_1...a_k \in A$ and $b_1...b_k \in B$, each $a_i,b_i \in \Sigma^*$\}. Show that the class of regular languages is closed under shuffle.
 \\
@@ -16,6 +66,24 @@
 \end{itemize}
 \end{itemize}
 
+%		1.44		%
+\item[1.44]Let $B$ and $C$ be languages over $\Sigma = \{0, 1\}$. Define
+\begin{center}$B \xleftarrow{1} C$ = \{$w \in B |$ for some $y \in C$, strings $w$ and $y$ contain equal numbers of 1s\}. 
+\end{center}
+Show that the class of regular languages is closed under the $\xleftarrow{1}$ operation.
+\\
+\textbf{Solution:} Answered in the text.
+
+%		1.50		%
+\item[1.50]Read the informal definition of the finite state transducer given in Exercise 1.24. Prove that no FST can output $w^R$ for every input $w$ if the input and output alphabets are \{0, 1\}.
+\\
+\textbf{Solution:} Answered in the text.
+
+%		1.52		%
+\item[1.52]\textbf{Myhill-Nerode theorem}. Refer to Problem 1.51. Let $L$ be a language and let $X$ be a set of strings. Say that $X$ is \textbf{\emph{pairwise distinguishable by L}} if every two distinct strings in $X$ are distinguishable by $L$. Define the \textbf{\emph{index of L}} to be the maximum number of elements in any set that is pairwise distinguishable by $L$. The index of $L$ may be finite or infinite.
+\\
+\textbf{Solution:} Answered in the text.
+
 %		1.53		%
 \item[1.53]Let $\Sigma$ = \{0, 1, +, =\} and $ADD$ = \{ $x = y + z$ $|$ $x, y, z$ are binary integers, and $x$ is the sum of $y$ and $z$\}. Show that $ADD$ is not regular.
 \\
@@ -24,6 +92,14 @@
 By the first and second conditions of the Pumping Lemma, $x$ and $y$ consist entirely of 1s, i.e. $x = 1^a, y = 1^b, z = 1^{p-a-b}=0^p+1^p$ for $a \ge 0, b > 0$.
 \\
 By the third condition, $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$. Choose $i=2$: $xy^2z = 1^a1^{2b}1^{p-a-b}=0^p+1^p$ = $1^{p+b}=0^p+1^p$. However, this string is not in $ADD$, because this implies $p+b = p$, but $b > 0$, a contradiction. Therefore, $ADD$ is not regular.
+
+%		1.55		%
+\item[1.55]The pumping lemma says that every regular language has a pumping length $p$, such that every string in the language can be pumped if it has length $p$ or more. If $p$ is a pumping length for language $A$, so is any length $p' \ge p$. The minimum pumping length for $A$ is the smallest $p$ that is a pumping length for $A$. For example, if $A = 01^*$, the minimum pumping length is 2. The reason is that the string $s = 0$ is in $A$ and has length 1 yet $s$ cannot be pumped; but any string in $A$ of length 2 or more contains a 1 and hence can be pumped by dividing it so that $x = 0, y = 1$, and $z$ is the rest. For each of the following languages, give the minimum pumping length and justify your answer.
+\begin{enumerate}
+\item[a.]\textbf{Solution:} Answered in the text.
+\item[b.]\textbf{Solution:} Answered in the text.
+\item[d.]\textbf{Solution:} Answered in the text.
+\end{enumerate}
 
 %		1.58		%
 \item[1.58]If $A$ is any language, let $A_{\frac{1}{3} - \frac{1}{3}}$ be the set of all strings in $A$ with their middle thirds removed so that
