@@ -46,6 +46,13 @@
 \item[c.]\textbf{Solution:} Answered in the text.
 \end{enumerate}
 
+%		1.31		%
+\item[1.31]For any string $w = w_{1}w_{2}\cdots w_{n}$, the \textbf{\emph{reverse}} of $w$, written $w^{\mathcal{R}}$, is the string $w$ in reverse order, $w_n\cdots w_{2}w_{1}$. For any language $A$, let $A^{\mathcal{R}} = \{w^{\mathcal{R}} | w \in A\}$. Show that if $A$ is regular, so is $A^{\mathcal{R}}$. 
+\\
+\textbf{Solution:} For any regular language $A$, let $M = (Q, \Sigma, \delta, q_0, F)$ be the DFA recognizing $A$. We need to construct an NFA/DFA $N$ such that $L(N) = A^{\mathcal{R}}$. Let $N = (Q', \Sigma, \delta', q_0', \{q_0\})$, where $q_0' \notin Q$ and $Q' = Q \cup \{q_0'\}$. Define $\delta'$ as: $\delta'(q_0', \epsilon) = F$, and $\delta'(q_0', a) = \emptyset, \forall a \in \Sigma$. Also, $\forall (q, a) \in Q \times \Sigma, \delta'(q, a) = \{q' | \delta(q', a) = q\}$. 
+
+\par Another way to approach this problem is an informal explanation: we reverse all of the transitions of $M$, and set the accept state of $N$ to be $M$'s start state. Also, introduce a new state $q_0'$ as $N$'s start state, which goes to every accept state in $M$ by an $\epsilon$-transition.
+
 %		1.40		%
 \item[1.40]Recall that string $x$ is a \textbf{prefix} of string $y$ if a string $z$ exists where $xz = y$, and that $x$ is a \textbf{proper prefix} of $y$ if in addition $x \ne y$. In each of the following parts, we define an operation on a language $A$. Show that the class of regular languages is closed under that operation.
 \begin{enumerate}
