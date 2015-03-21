@@ -42,6 +42,7 @@
 \item[1.29]Use the pumping lemma to show that the following languages are not regular.
 \begin{enumerate}
 \item[a.]\textbf{Solution:} Answered in the text.
+\item[b.]\textbf{Solution:} $A_2$ = \{$www$ $|$ $w \in \{a, b\}^*$\}. Suppose that $A_2$ were regular, and let $p$ be the constant for $A_2$ as given by the pumping lemma. Then, let $s = a^{p}ba^{p}ba^{p}b \in A_2$. Therefore, we can decompose $s$ as $xyz$, where $|xy| \le p, |y| > 0$, and $xy^iz \in A_2$ for $\forall i \in \mathbb{N}$. Since $|xy| \le p$, $x, y$ consist entirely of $a$'s; therefore, we can write $x = a^c$, $y = a^d$, and $z = a^{p-c-d}ba^{p}ba^{p}b$, where $c \ge 0, d > 0, p-c-d \ge 0$. For the third condition, choose $i = 2$: $w = xy^{2}z = a^{c}a^{2d}a^{p-c-d}ba^{p}ba^{p}b = a^{p+d}ba^{p}ba^{p}b$. Since $d > 0$, $w \notin A_2$: therefore, we have a contradiction, and $A_2$ is not regular.
 \item[c.]\textbf{Solution:} Answered in the text.
 \end{enumerate}
 
@@ -68,7 +69,8 @@
 
 %		1.44		%
 \item[1.44]Let $B$ and $C$ be languages over $\Sigma = \{0, 1\}$. Define
-\begin{center}$B \xleftarrow{1} C$ = \{$w \in B |$ for some $y \in C$, strings $w$ and $y$ contain equal numbers of 1s\}. 
+\begin{center}
+$B \xleftarrow{1} C$ = \{$w \in B |$ for some $y \in C$, strings $w$ and $y$ contain equal numbers of 1s\}. 
 \end{center}
 Show that the class of regular languages is closed under the $\xleftarrow{1}$ operation.
 \\
