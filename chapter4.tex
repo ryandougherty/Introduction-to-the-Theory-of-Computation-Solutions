@@ -110,6 +110,11 @@ $D$ = ``On input \angles{G} where $G$ is a CFG:
 \end{enumerate}
 We can check $1^i \in L(C)$ using the Cocke-Younger-Kasami (CYK) algorithm for CFGs, which has a running time of $\Theta(n^3 |G|)$. Therefore, the loop has a running time of $\Theta(pn^3 |G|)$. Since Steps 1, 2, 3, and 4 take finite time, this language is decidable.
 
+%		4.23		%
+\item[4.23]Say that an NFA is ambiguous if it accepts some string along two different computation branches. Let $AMBIG_{NFA}$ = \{\angles{N} $|$ $N$ is an ambiguous NFA\}. Show that $AMBIG_{NFA}$ is decidable. (Suggestion: One elegant way to solve this problem is to construct a suitable DFA and then run $E_{DFA}$ on it.)
+\\
+\textbf{Solution:} \alreadyanswered
+
 %		4.24		%
 \item[4.24]A \emph{\textbf{useless state}} in a pushdown automaton is never entered on any input string. Consider the problem of determining whether a pushdown automaton has any useless states. Formulate this problem as a language and show that it is decidable.
 \\
@@ -134,4 +139,10 @@ $T$ = ``On input \angles{P} where $P = (Q, \Sigma, \Gamma, \delta, q_0, Z, F)$ i
 \item[2.]$Reject$ \angles{P}."
 \end{enumerate}
 Since $E_{PDA}$ is decidable, $U_{PDA}$ is decidable.
+
+%		4.25		%
+\item[4.25]Let $BAL_{DFA}$ = \{\angles{M} $|$ $M$ is a DFA that accepts some string containing an equal number of 0s and 1s\}. Show that $BAL_{DFA}$ is decidable. (Hint: Theorems about CFLs are helpful here.)
+\\
+\textbf{Solution:} \alreadyanswered
+
 \end{enumerate}
