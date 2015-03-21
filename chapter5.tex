@@ -1,5 +1,36 @@
 \section{Chapter 5}
 \begin{enumerate}
+
+%		5.5		%
+\item[5.5]Show that $A_{TM}$ is not mapping reducible to $E_{TM}$. In other words, show that no computable function reduces $A_{TM}$ to $E_{TM}$. (Hint: Use a proof by contradiction, and facts you already know about $A_{TM}$ and $E_{TM}$.)
+\\
+\textbf{Solution:} \alreadyanswered
+
+%		5.6		%
+\item[5.6]Show that $\le_m$ is a transitive relation.
+\\
+\textbf{Solution:} \alreadyanswered
+
+%		5.7		%
+\item[5.7]Show that if $A$ is Turing-recognizable and $A \le_m \overline{A}$, then $A$ is decidable.
+\\
+\textbf{Solution:} \alreadyanswered
+
+%		5.8		%
+\item[5.8]In the proof of Theorem 5.15, we modified the Turing machine $M$ so that it never tries to move its head off the left-hand end of the tape. Suppose that we did not make this modification to $M$. Modify the PCP construction to handle this case.
+\\
+\textbf{Solution:} \alreadyanswered
+
+%		5.10		%
+\item[5.10]Consider the problem of determining whether a two-tape Turing machine ever writes a nonblank symbol on its second tape when it is run on input $w$. Formulate this problem as a language and show that it is undecidable.
+\\
+\textbf{Solution:} \alreadyanswered
+
+%		5.11		%
+\item[5.11]Consider the problem of determining whether a two-tape Turing machine ever writes a nonblank symbol on its second tape during the course of its computation on any input string. Formulate this problem as a language and show that it is undecidable.
+\\
+\textbf{Solution:} \alreadyanswered
+
 %		5.13		%
 \item[5.13]A \emph{\textbf{useless state}} in a Turing machine is one that is never entered on any input string. Consider the problem of determining whether a Turing machine has any useless states. Formulate this problem as a language and show that it is undecidable.
 \\
@@ -33,6 +64,12 @@ Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1
 \\
 \textbf{Solution:} Any Turing-recognizable but not co-Turing-recognizable language works (or vice versa), such as $A_{TM}$.
 
+%		5.28		%
+\item[5.28]\textbf{Rice's theorem}. Let $P$ be any nontrivial property of the language of a Turing machine. Prove that the problem of determining whether a given Turing machine's language has property $P$ is undecidable.
+\par In more formal terms, let $P$ be a language consisting of Turing machine descriptions where $P$ fulfills two conditions. First, $P$ is nontrivial--it contains some, but not all, TM descriptions. Second, $P$ is a property of the TM's language--whenever $L(M_1) = L(M_2)$, we have \angles{M_1} $\in P$ iff \angles{M_2} $\in P$. Here, $M_1$ and $M_2$ are any TMs. Prove that $P$ is an undecidable language.
+\\
+\textbf{Solution:} \alreadyanswered
+
 %		5.29		%
 \item[5.29]Show that both conditions in Problem 5.28 are necessary for proving that P is undecidable.
 \\
@@ -47,13 +84,14 @@ For 1, we just build a TM that accepts if $M$ is a valid TM description. In the 
 \item[5.30]Use Rice's theorem, which appears in Problem 5.28, to prove the undecidability of each of the following languages.
 \begin{enumerate}
 \item[a.]$INFINITE_{TM}$ = \{\angles{M} $|$ $M$ is a TM and $L(M)$ is an infinite language\}.
+\\
+\textbf{Solution:} \alreadyanswered
 \item[b.]\{\angles{M} $|$ $M$ is a TM and $1011 \in L(M)$\}.
+\\
+\textbf{Solution:} Let $P$ be this language. We can clearly see $P$ is a language of descriptions of TMs. It is non-trivial because some TMs contain the string 1011 in their language, and others do not. Also, it only depends on the language. If two TMs recognize the same language, either both have their descriptions in $P$, or neither do. Therefore, we can apply Rice's theorem and conclude that $P$ is undecidable.
 \item[c.]$ALL_{TM}$ = \{\angles{M} $|$ $M$ is a TM and $L(M) = \Sigma^*$\}.
+\\
+\textbf{Solution:} $ALL_{TM}$ is non-trivial because some TMs accept $\Sigma^*$ and others do not. Also, it only depends on the language. If two TMs recognize $\Sigma^*$, then the descriptions of both are in $ALL_{TM}$ or neither are. Therefore, we can apply Rice's theorem and conclude that $ALL_{TM}$ is undecidable.
 \end{enumerate}
-\textbf{Solution:}
-\begin{enumerate}
-\item[a.]Given in the text.
-\item[b.]Let $P$ be this language. We can clearly see $P$ is a language of descriptions of TMs. It is non-trivial because some TMs contain the string 1011 in their language, and others do not. Also, it only depends on the language. If two TMs recognize the same language, either both have their descriptions in $P$, or neither do. Therefore, we can apply Rice's theorem and conclude that $P$ is undecidable.
-\item[c.]$ALL_{TM}$ is non-trivial because some TMs accept $\Sigma^*$ and others do not. Also, it only depends on the language. If two TMs recognize $\Sigma^*$, then the descriptions of both are in $ALL_{TM}$ or neither are. Therefore, we can apply Rice's theorem and conclude that $ALL_{TM}$ is undecidable.
-\end{enumerate}
+
 \end{enumerate}
