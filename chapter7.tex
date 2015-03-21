@@ -1,5 +1,19 @@
 \section{Chapter 7}
 \begin{enumerate}
+%		7.1		%
+\item[7.1]Answer each part TRUE or FALSE.
+\begin{enumerate}
+\item[c.]\textbf{Solution:} \alreadyanswered
+\item[d.]\textbf{Solution:} \alreadyanswered
+\end{enumerate}
+
+%		7.2		%
+\item[7.2]Answer each part TRUE or FALSE.
+\begin{enumerate}
+\item[c.]\textbf{Solution:} \alreadyanswered
+\item[d.]\textbf{Solution:} \alreadyanswered
+\end{enumerate}
+
 %		7.15		%
 \item[7.15]Show that P is closed under the star operation. (Hint: Use dynamic programming. On input $y = y_1\cdots y_n$ for $y_i \in \Sigma$, build a table indicating for each $i \le j$ whether the substring $y_i\cdots y_j \in A^*$ for any $A \in$ P.)
 \\
@@ -32,6 +46,11 @@ $T$ = ``On input $w \in \Sigma^*$:
 \item[6.]Output if $B(1, n) = 1$."
 \end{myEnumerate}
 
+%		7.16		%
+\item[7.16]Show that NP is closed under the star operation.
+\\
+\textbf{Solution:} \alreadyanswered
+
 %		7.20		%
 \item[7.20]We generally believe that \emph{PATH} is not NP-complete. Explain the reason behind this belief. Show that proving \emph{PATH} is not NP-complete would prove P $\ne$ NP.
 \\
@@ -55,6 +74,21 @@ Since this reduction takes polynomial time, then P = NP implies \emph{PATH} is N
 $\phi' = \phi \wedge (x \vee \overline{x})$
 \end{center}
 We show that $\phi \in 3SAT$ if and only if $\phi' \in DOUBLE$-$SAT$. If $\phi \in 3SAT$, then there is one satisfying assignment - for $\phi'$ there are two since we can set $x = 0, 1$ and still have $\phi'$ be true. If $\phi$ is unsatisfiable, then clearly $\phi'$ is also unsatisfiable. Therefore, we are done.
+
+%		7.23		%
+\item[7.23]Let $HALF$-$CLIQUE$ = \{\angles{G} $|$ $G$ is an undirected graph having a complete subgraph with at least $\frac{m}{2}$ nodes, where $m$ is the number of nodes in $G$\}. Show that $HALF$-$CLIQUE$ is NP-complete.
+\\
+\textbf{Solution:} \alreadyanswered
+
+%		7.33		%
+\item[7.33]In the following solitaire game, you are given an $m \times m$ board. On each of its $m^2$ positions lies either a blue stone, a red stone, or nothing at all. You play by removing stones from the board until each column contains only stones of a single color and each row contains at least one stone. You win if you achieve this objective. Winning may or may not be possible, depending upon the initial configuration. Let $SOLITAIRE$ = \{\angles{G} $|$ $G$ is a winnable game configuration\}. Prove that $SOLITAIRE$ is NP-complete.
+\\
+\textbf{Solution:} \alreadyanswered
+
+%		7.40		%
+\item[7.40]Show that if P = NP, a polynomial time algorithm exists that takes an undirected graph as input and finds a largest clique contained in that graph. (See the note in Problem 7.38.)
+\\
+\textbf{Solution:} \alreadyanswered
 
 %		7.49		%
 \item[7.49]Let $f: \mathcal{N} \rightarrow \mathcal{N}$ be any function where $f(n) = o(n log n)$. Show that $TIME(f(n))$ contains only the regular languages.
