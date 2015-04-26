@@ -127,4 +127,46 @@ $A$ \emph{avoids} $B$ = \{$w$ $|$ $w \in A$ and $w$ doesn't contain any string i
 Prove that the class of regular languages is closed under the \emph{avoids} operation.
 \\
 \textbf{Solution:} The idea is to find a regular language that has strings in $B$ as a substring, and remove from $A$ this language. Therefore, define $L_{substr} = \Sigma^*B\Sigma^*$. Clearly, $L_{substr}$ is regular because it is the concatenation of 2 regular languages. Since regular languages are closed under complement and intersection, then $A \setminus L_{substr} = A \cap \overline{L_{substr}}$ is also regular. But these are precisely the strings that are in $A$ that are not in $L_{substr}$, which is what we want.
+
+%		1.72		%
+\item[1.72]Let $M_1$ and $M_2$ be DFAs that has $k_1$ and $k_2$ states, respectively, and then let $U = L(M_1) \cup L(M_2)$. 
+\begin{enumerate}
+\item[a.]Show that if $U \ne \emptyset$, then $U$ contains some string $s$, where $|s| < \max(k_1, k_2)$.
+\\
+\textbf{Solution:} Consider a DFA $D = (Q, \Sigma, \delta, q_0, F)$ such that $L(D) \ne \emptyset$. Therefore, if the final state is reachable, transitioning from $D$'s start state to a final state requires at most $|Q| - |F|$ transitions. Since $U \ne \emptyset$, then either $L(M_1) \ne \emptyset$ or $L(M_2) \ne \emptyset$ (or both). We have the following cases:
+\begin{enumerate}
+\item[1.] $L(M_1) = \emptyset, L(M_2) \ne \emptyset$. This implies that $M_1$ has no reachable accept states, and $M_2$ has at least one reachable accept state. Also, $U = L(M_2)$. From our observation above, if $M_2$ accepts a string $s$, then $|s| \le k_2 - |F_2| < k_2 \le \max(k_1, k_2)$ where $F_2$ is the set of accept states of $M_2$. Therefore, $s \in L(M_2) = U$.
+
+\item[2.] $L(M_1) \ne \emptyset, L(M_2) = \emptyset$. This is equivalent to Case 1.
+
+\item[3.] $L(M_1), L(M_2) \ne \emptyset$. Therefore, $M_1$ and $M_2$ have at least one reachable accept state. Let $s_1$ be the string of minimal length accepted by $M_1$, and $s_2$ for $M_2$. Let $s \in U$ be such that $|s| = \min(|s_1|, |s_2|)$. We have the following 2 cases:
+\begin{enumerate}
+\item[3.1.] $|s_1| \ne |s_2|$. This implies $|s| = \min(|s_1|, |s_2|) < \max(|s_1|, |s_2|)$. There are two possibilities. If $\max(|s_1|, |s_2|) = |s_1|$, then $|s| = |s_2| < |s_1| < k_1 \le \max(k_1, k_2)$. Therefore, we are done. The same conclusion is reached if we consider when $\max(|s_1|, |s_2|) = |s_2|$. 
+
+\item[3.2.] $|s_1| = |s_2$. This implies $|s| = \min(|s_1|, |s_2|) = \max(|s_1|, |s_2|)$. From our observation above, we have that $|s| = \min(|s_1|, |s_2|) = \max(|s_1|, |s_2|) = |s_1| < k_1 \le \max(k_1, k_2)$. Therefore, we are done.
+\end{enumerate}
+\end{enumerate}
+
+\item[b.]Show that if $U \ne \Sigma^*$, then $U$ excludes some string $s$, where $|S| < k_1k_2$.
+
+\textbf{Solution:} Let $D = (Q, \Sigma, \delta, q_0, F)$ be a DFA such that $L(D) = U = L(M_1) \cup L(M_2)$. Suppose (to the contrary) that all strings $s \in U$ are such that $|s| < k_1k_2$. Also, suppose there exists a non-accepting state $q \in Q$. Therefore, there cannot exist a sequence of states $q_1, \cdots, q_{k_1k_2}$ in $D$ such that running $D$ on $s$ would have $q$ in this sequence:
+\begin{enumerate}
+\item[1.]$q_1 = q_0$.
+\item[2.]$\delta(q_i, x) = q_{i+1}$ for $1 \le i \le k_1k_2-1$ and for all $x \in \Sigma$.
+\item[3.]$q_j \ne q_k$ for $j \ne k$.
+\end{enumerate}
+If $q$ were in this sequence, then $q$ would be an accepting state. However, this implies that $D$ has $k_1k_2+1$ distinct states, and $D$ has only $k_1k_2$ states, a contradiction. Therefore, either $q$ is not reachable from $q_0$, or $q$ does not exist. 
+\\ \\
+Since $q$ is an arbitrary non-accepting state of $D$, the only states reachable from $q_0$ are accepting states. Now, we prove by induction that all strings of length $\ge k_1k_2$ are accepted by $D$.
+\\ \\
+Basis step: from above, $D$ accepts any string of length $k_1k_2 - 1 < k_1k_2$. Let $s \in \Sigma^*$ such that $|s| = k_1k_2 - 1$. Therefore, $\delta^*(q_0, s)$ must result in an accepting state. Let $r$ be this state. Therefore, $\delta(q, w)$ for all $w \in \Sigma$ must result in an accepting state, since all reachable states from $q_0$ are accepting states. Therefore, $D$ must accept any string $s \in \Sigma^*$ such that $|s| = k_1k_2$. 
+\\ \\
+Inductive Hypothesis: assume that $D$ accepts any string $s \in \Sigma^*$ such that $|s| = k_1k_2 + n$ for some $n \in \mathbb{N}$. 
+\\ \\
+Inductive Step: By the IH, $\delta^*(q_0, s)$ must result in an accepting state for all $s \in \Sigma^*$ such that $|s| = k_1k_2 + n$ for some $n \in \mathbb{N}$. Let the accept state be $r$. For all $w \in \Sigma, \delta(q, w)$ results in an accepting state. It follows that $D$ accepts all $s \in \Sigma^*$ such that $|s| = k_1k_2+n+1$. Now, we showed that $D$ accepts all $s \in \Sigma^*$ such that $|s| \ge k_1k_2$. From earlier, we showed that $D$ accepts all $t \in \Sigma^*$ such that $|t| < k_1k_2$. 
+\\ \\
+Therefore, $L(D) = U = \Sigma^*$. However, this is a contradiction to our assumption. Therefore, $U$ excludes some string $s$ where $|s| < k_1k_2$. 
+
+\end{enumerate}
+
 \end{enumerate}
