@@ -83,6 +83,20 @@ Show that the class of regular languages is closed under the $\xleftarrow{1}$ op
 \\
 \textbf{Solution:} \alreadyanswered
 
+%		1.45		%
+\item[1.45]Let $A/B = \{w | wx \in A$ for some $x \in B$\}. Show that if $A$ is regular and $B$ is any language, then $A/B$ is regular.
+\\
+\textbf{Solution:} Let $M = (Q, \Sigma, \delta, q_0, F)$ be a DFA such that $L(M) = A$, and $\Sigma$ is the union of the alphabets of $A$ and $B$. Let $F_{r} = \{q \in Q | \exists x \in B$ such that $M$ can reach a final state when having read $x$, starting at $q$\}. Therefore, $L(M) = A/B$. 
+
+%		1.48		%
+\item[1.48]Let $\Sigma = \{0, 1\}$ and let
+\begin{center}
+$D = \{w | w$ contains an equal number of occurrences of the substrings 01 and 10\}.
+\end{center}
+Thus 101 $\in D$ because 101 contains a single 01 and a single 10, but 1010 $\notin D$ because 1010 contains two 10s and one 01. Show that $D$ is a regular language. 
+\\
+\textbf{Solution:} $D$ is just precisely described by the regular expression $(1^+0^*1^+)^* \cup (0^+1^*0^+)^*$
+
 %		1.50		%
 \item[1.50]Read the informal definition of the finite state transducer given in Exercise 1.24. Prove that no FST can output $w^R$ for every input $w$ if the input and output alphabets are \{0, 1\}.
 \\
