@@ -16,6 +16,40 @@
 \\
 \textbf{Solution:} \alreadyanswered
 
+%		3.12		%
+\item[3.12]A \textbf{\emph{Turing machine with left reset}} is similar to an ordinary Turing machine, but the transition function has the form
+\[
+\delta \colon Q \times \Gamma \rightarrow Q \times \Gamma \times \{\text{R, RESET}\}
+\]
+If $\delta(q, a) = (r, b, \text{RESET})$, when the machine is in state $q$ reading an $a$, the machine?s head jumps to the left-hand end of the tape after it writes $b$ on the tape and enters state $r$. Note that these machines do not have the usual ability to move the head one symbol left. Show that Turing machines with left reset recognize the class of Turing-recognizable languages.
+\\
+\textbf{Solution:} Let $M$ be a TM. We will construct a TM with left-reset $L$ as follows: \\
+$L$ = ``On input w:
+\begin{enumerate}
+\item If $q$ is a halting (i.e., accept or reject) state, go to step d. Otherwise, execute Steps b or c depending on whether the current transition is right or left.
+\item If the current transition is right:
+\begin{enumerate}
+\item For the current tape symbol $s$, and for $\delta(q, a) = (q', b, R)$, replace the $a$ with a $b$ and then RESET.
+\item Scan right for a marked symbol - if there are none, RESET and mark the first symbol. Then, move the head to the right, change $L$'s state to $q'$, and go back to step a. If there is a marked symbol, move the tape head right.
+\item Mark the symbol under the tape head, move right, and change $L$'s state to be $q'$. Then, go back to step a. 
+\end{enumerate}
+\item If the current transition is left:
+\begin{enumerate}
+\item If $\delta(q, a) = (q', b, L)$, replace the $a$ with $b$ and then RESET.
+\item If the first symbol is marked, remove the mark, and then RESET. Also, change $L$'s state to be $q'$ and go back to step a. 
+\item Scan right for a marked symbol - if there are none, \emph{reject} $w$. Otherwise, if one is found, RESET and mark the first symbol.
+\item If the next symbol is marked, unmark it and RESET. Also, move right and change $L$'s state to be $q'$, and go back to step a.
+\item If the second symbol is not marked:
+\begin{enumerate}
+\item RESET, move right to the first marked cell, and unmark it and move right again.
+\item Mark the current tape cell and move right again.
+\item If the current tape cell is unmarked, go back to A. Otherwise, unmark it and RESET.
+\item Move right to the first marked cell. Move right and change $L$'s state to $q'$ and go back to step a.
+\end{enumerate}
+\end{enumerate}
+\item If $q'$ is an accept state, then \emph{accept} $w$; otherwise, \emph{reject} $w$."
+\end{enumerate}
+
 %		3.15		%
 \item[3.15]Show that the collection of decidable languages is closed under the operation of
 \begin{enumerate}
