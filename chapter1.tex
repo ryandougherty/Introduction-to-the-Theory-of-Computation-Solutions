@@ -7,6 +7,40 @@
 \\
 \textbf{Solution:} \alreadyanswered
 
+%		1.3		%
+\item[1.3]The formal description of a DFA $M$ is $(\{q_1, q_2, q_3, q_4, q_5\}, \{u, d\}, \delta, q_3, \{q_3\})$, where $\delta$ is given by the following table. Give the state diagram of this machine.
+\begin{table}[!htb]
+\centering
+\begin{tabular}{l|ll}
+      & $u$   & $d$   \\ \hline
+$q_1$ & $q_1$ & $q_2$ \\
+$q_2$ & $q_1$ & $q_3$ \\
+$q_3$ & $q_2$ & $q_4$ \\
+$q_4$ & $q_3$ & $q_5$ \\
+$q_5$ & $q_4$ & $q_5$
+\end{tabular}
+\end{table}
+
+\textbf{Solution:} 
+\begin{tikzpicture}[shorten >=1pt,node distance=2cm,initial text={},on grid,auto] 
+   \node[state,initial] (q_1)   {$q_1$}; 
+   \node[state] (q_2) [right=of q_1] {$q_2$}; 
+   \node[state,accepting](q_3) [right=of q_2] {$q_3$};
+   \node[state] (q_4) [right=of q_3] {$q_4$};
+   \node[state] (q_5) [right=of q_4] {$q_5$};
+    \path[->] 
+    (q_1) edge [loop above] node {$u$} (q_1)
+          edge [bend left=20] node {$d$} (q_2)
+    (q_2) edge [bend left=20] node {$u$} (q_1)
+          edge [bend left=20] node {$d$} (q_3)
+    (q_3) edge [bend left=20] node {$u$} (q_2)
+          edge [bend left=20] node {$d$} (q_4)
+    (q_4) edge [bend left=20] node {$u$} (q_3)
+          edge [bend left=20] node {$d$} (q_5)
+    (q_5) edge [bend left=20] node {$u$} (q_4)
+          edge [loop above] node {$d$} (q_5);
+\end{tikzpicture}
+
 %		1.4		%
 \item[1.4]Each of the following languages is the intersection of two simpler languages. In each part, construct DFAs for the simpler languages, then combine them using the construction discussed in footnote 3 (page 46) to give the state diagram of a DFA for the language given. In all parts, $\Sigma = \{a, b\}$.
 \begin{enumerate}
