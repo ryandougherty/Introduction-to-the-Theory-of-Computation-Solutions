@@ -1,6 +1,8 @@
 Introduction-to-the-Theory-of-Computation-Solutions
 ===================================================
 
+If you want to contribute to this repository, feel free to create a pull request (please copy the format as in the other exercises). Also, let me know if there are any errors in the existing solutions.
+
 Solutions to Michael Sipser's Introduction to the Theory of Computation Book (3rd Edition).
 
 Completed chapters:
