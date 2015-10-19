@@ -2,6 +2,11 @@
 
 \begin{enumerate}
 
+%		1.1		%
+\item[1.1]The following are the state diagrams of two DFAs, $M_1$ and $M_2$. Answer the following questions about each of these machines.
+\\
+\textbf{Solution:} \alreadyanswered
+
 %		1.2		%
 \item[1.2]Give the formal description of the machines $M_1$ and $M_2$ pictured in Exercise 1.1.
 \\
@@ -43,9 +48,26 @@ $q_5$ & $q_4$ & $q_5$
 
 %		1.4		%
 \item[1.4]Each of the following languages is the intersection of two simpler languages. In each part, construct DFAs for the simpler languages, then combine them using the construction discussed in footnote 3 (page 46) to give the state diagram of a DFA for the language given. In all parts, $\Sigma = \{a, b\}$.
+
+\par \textbf{Note:} for simplicity, I omit the state diagrams. 
 \begin{enumerate}
+\item[a.]\textbf{Solution:} The state set is $Q = \{q_{i, j} \colon 0 \le i \le 3, 0 \le j \le 2\}$, with transition function:
+\begin{itemize}
+\item $\delta(q_{i, j}, a) = q_{i+1, j}$ for all $0 \le i \le 2, 0 \le j \le 2$,
+\item $\delta(q_{i, j}, b) = q_{i, j+1}$ for all $0 \le i \le 3, 0 \le j \le 1$.
+\end{itemize}
+The start state is $q_{0, 0}$, and the final state is $q_{3, 2}$. 
 \item[b.]\textbf{Solution:} \alreadyanswered
 \item[d.]\textbf{Solution:} \alreadyanswered
+\end{enumerate}
+
+%		1.5		%
+\item[1.5]Each of the following languages is the complement of a simpler languages. In each part, construct DFAs for the simpler language, then use it to give the state diagram of a DFA for the language given. In all parts, $\Sigma = \{a, b\}$.
+
+\par \textbf{Note:} for simplicity, I omit the state diagrams. 
+\begin{enumerate}
+\item[a.]\textbf{Solution:} \alreadyanswered
+\item[b.]\textbf{Solution:} \alreadyanswered
 \end{enumerate}
 
 %		1.6		%
