@@ -85,6 +85,22 @@ We show that $\phi \in 3SAT$ if and only if $\phi' \in DOUBLE$-$SAT$. If $\phi \
 \\
 \textbf{Solution:} \alreadyanswered
 
+%		7.38		%
+\item[7.38]Show that if P = NP, a polynomial time algorithm exists that produces a satisfying assignment when given a satisfiable Boolean formula. (Note: The algorithm you are asked to provide computes a function; but NP contains languages, not functions. The P = NP assumption implies that SAT is in P, so testing satisfiability is solvable in polynomial time. But the assumption doesn?t say how this test is done, and the test may not reveal satisfying assignments. You must show that you can find them anyway. Hint: Use the satisfiability tester repeatedly to find the assignment bit-by-bit.)
+\\
+\textbf{Solution:} The assumption of P = NP implies SAT $\in$ P with polynomial-time TM $M$. We will construct a polynomial-time TM $B$ that outputs, given $\phi$ an assignment if one exists:
+\\
+$B$ = ``On input boolean formula $\phi$ over variables $x_1, \cdots, x_k$:
+\begin{enumerate}
+\item Run $M$ on $\phi$. If $M$ rejects, \emph{reject} $\phi$. Otherwise, continue.
+\item For $1 \le i \le k$:
+\begin{enumerate}
+\item Let $\phi'$ be $\phi$ but with the variable $x_i$ hard-coded to 0. 
+\item Run $M$ on $\phi'$. If $M$ accepts, overwrite all instances of $x_i$ in $\phi$ to be 0; otherwise, overwrite all instances of $x_i$ in $\phi$ to be 1.
+\end{enumerate}
+\end{enumerate}
+$B$ runs in polynomial time because setting the $x_i$ takes $O(|\phi|)$ time for each $x_i$. Since there are $O(|\phi|)$ variables, and calling $M$ takes polynomial time by assumption, $B \in$ P. The logic is correct because the first step checks whether $\phi$ is satisfiable or not - when we use the for loop, we know that an assignment exists. If setting $x_i$ to be 0 makes $M$ reject $\phi$, then the setting of $x_i$ must be 1.
+
 %		7.40		%
 \item[7.40]Show that if P = NP, a polynomial time algorithm exists that takes an undirected graph as input and finds a largest clique contained in that graph. (See the note in Problem 7.38.)
 \\
