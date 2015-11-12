@@ -101,7 +101,7 @@ $D$ = ``On input \angles{G} where $G$ is a CFG:
 \itemsep0em
 \item[1.]Convert $G$ into an equivalent CFG $C$ in Chomsky Normal Form.
 \item[2.]Let $p$ be the pumping length of $C$.
-\item[3.]Repeat $\forall i \le f(p)$:
+\item[3.]Repeat $0 \le i \le p + p!$:
 \begin{enumerate}
 \item[a.]Check whether $1^i \in L(C)$.
 \item[b.]If not, $reject$ \angles{G}.
