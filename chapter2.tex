@@ -21,6 +21,27 @@ X &\rightarrow a | b
 \\
 \textbf{Solution:} \alreadyanswered
 
+%		2.9		%
+\item[2.9]Give a context-free grammar that generates the language
+\begin{center}
+$A = \{a^ib^jc^k\;\vert\;i=j\;\text{or}\;j=k\;\text{where}\;i,j,k\ge 0\}$
+\end{center}
+Is your grammar ambiguous? Why or why not?
+\\
+\textbf{Solution:} construct a CFG $G = (S, A, B, C, D\}, \{a, b, c\}, R, S)$ with the rules:
+\begin{align*}
+S \rightarrow BC\;\vert\;A\\
+B \rightarrow aBb\;\vert\;\epsilon \\
+C \rightarrow cC\;\vert\;\epsilon \\
+A \rightarrow aAc\;\vert\;D \\
+D \rightarrow bD\;\vert\;\epsilon \\
+\end{align*}
+Yes it is ambiguous. Choose the word $abc$. The two derivations are:
+\begin{enumerate}
+\item $S \rightarrow BC \rightarrow aBbC \rightarrow abC \rightarrow abcC \rightarrow abc$,
+\item $S \rightarrow A \rightarrow aAc \rightarrow aDc \rightarrow abDc \rightarrow abc$.
+\end{enumerate}
+
 %		2.18		%
 \item[2.18]
 \begin{enumerate}
