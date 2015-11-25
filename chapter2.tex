@@ -30,16 +30,16 @@ Is your grammar ambiguous? Why or why not?
 \\
 \textbf{Solution:} construct a CFG $G = (S, A, B, C, D\}, \{a, b, c\}, R, S)$ with the rules:
 \begin{align*}
-S \rightarrow BC\;\vert\;A\\
+S \rightarrow BC\;\vert\;AD\\
 B \rightarrow aBb\;\vert\;\epsilon \\
 C \rightarrow cC\;\vert\;\epsilon \\
-A \rightarrow aAc\;\vert\;D \\
-D \rightarrow bD\;\vert\;\epsilon \\
+A \rightarrow aA\;\vert\;\epsilon \\
+D \rightarrow bDc\;\vert\;\epsilon \\
 \end{align*}
 Yes it is ambiguous. Choose the word $abc$. The two derivations are:
 \begin{enumerate}
 \item $S \rightarrow BC \rightarrow aBbC \rightarrow abC \rightarrow abcC \rightarrow abc$,
-\item $S \rightarrow A \rightarrow aAc \rightarrow aDc \rightarrow abDc \rightarrow abc$.
+\item $S \rightarrow AD \rightarrow aAD \rightarrow aD \rightarrow abDc \rightarrow abc$.
 \end{enumerate}
 
 %		2.18		%
