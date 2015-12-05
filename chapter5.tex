@@ -64,9 +64,28 @@ Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1
 \\
 \textbf{Solution:} Any Turing-recognizable but not co-Turing-recognizable language works (or vice versa), such as $A_{TM}$.
 
+%		5.26		%
+\item[5.26]Define a \textbf{\emph{two-headed finite automaton}} (2DFA) to be a deterministic finite automaton that has two read-only, bidirectional heads that start at the left-hand end of the input tape and can be independently controlled to move in either direction. The tape of a 2DFA is finite and is just large enough to contain the input plus two additional blank tape cells, one on the left-hand end and one on the right-hand end, that serve as delimiters. A 2DFA accepts its input by entering a special accept state. For example, a 2DFA can recognize the language $\{a^nb^nc^n \vert n \ge 0\}$.
+\begin{enumerate}
+\item[a.]Let $A_{2DFA} = \{\langle M, x \rangle\vert M\;\text{is a 2DFA and $M$ accepts $x$}\}$. Show that $A_{2DFA}$ is decidable.
+\\
+\textbf{Solution:} since the input tape is only finitely long, there are only finitely many different configurations that the 2DFA can be in: if it has $|Q|$ states with input $w$ of length $|w|$ (counting the delimiters), the number of configurations is $|Q|\times|w|^2$. We can decide $A_{2DFA}$ with a TM $T$ as follows:
+\\
+$T$ = ``On input $\langle M, x\rangle$ where $M$ is a 2DFA and $x$ is a string, and $M$ has states $Q$:
+\begin{enumerate}
+\item Simulate $M$ on $x$ for $|Q|\times|x|^2$ steps.
+\item If $M$ halts within $|Q|\times|x|^2$ steps, then \emph{accept} $x$; otherwise, \emph{reject} $x$."
+\end{enumerate}
+
+\item[b.]Let $E_{2DFA} = \{\langle M \rangle\vert M\;\text{is a 2DFA and $L(M) = \emptyset$}\}$. Show that $E_{2DFA}$ is not decidable
+\\
+\textbf{Solution:} we show $E_{2DFA} \le_m A_{TM}$. Given $\langle M \rangle$ and $w$, we can create a 2DFA that accepts all accepting computation histories for $M$ on $w$, and rejects all other strings. Then we just test if the language is empty. The proof goes the same way as did for $E_{LBA}$.
+\end{enumerate}
+
 %		5.28		%
 \item[5.28]\textbf{Rice's theorem}. Let $P$ be any nontrivial property of the language of a Turing machine. Prove that the problem of determining whether a given Turing machine's language has property $P$ is undecidable.
-\par In more formal terms, let $P$ be a language consisting of Turing machine descriptions where $P$ fulfills two conditions. First, $P$ is nontrivial--it contains some, but not all, TM descriptions. Second, $P$ is a property of the TM's language--whenever $L(M_1) = L(M_2)$, we have \angles{M_1} $\in P$ iff \angles{M_2} $\in P$. Here, $M_1$ and $M_2$ are any TMs. Prove that $P$ is an undecidable language.
+
+\par In more formal terms, let $P$ be a language consisting of Turing machine descriptions where $P$ fulfills two conditions. First, $P$ is nontrivial--it contains some, but not all, TM descriptions. Second, $P$ is a property of the TM's language--whenever $L(M_1) = L(M_2)$, we have \angles{M_1} $\in P$ iff \angles{M_2} $\in P$. Here, $M_1$ and $M_2$ are any TMs. Prove that $P$ is an undecidable language.
 \\
 \textbf{Solution:} \alreadyanswered
 
