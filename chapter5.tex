@@ -59,6 +59,11 @@ $D$ = ``On input a collection of dominos:
 \end{enumerate}
 Step 4 guarantees a match. Let $d_1$ have $t_1$ 1s on the top, and $t_1 - c_1$ 1s on the bottom. Let $d_2$ have $t_2$ 1s on the top and $t_2 + c_2$. Choosing $c_2$ of the $d_1$ domino and $c_1$ of the $d_2$ domino yields $c_2 \times t_1 + c_1 \times t_2$ 1s on the top, and $c_2 \times (t_1 - c_1) + c_1 \times (t_2 + c_2) = c_2 \times t_1 + c_1 \times t_2$ 1s on the bottom, which is a match.
 
+%		5.24		%
+\item[5.24]Let $J = \{w \vert\;\text{either $w=0x$ for some $x \in A_{TM}$, or $w=1y$ for some $y \in \overline{A_TM}$}\}$. Show that neither $J$ nor $\overline{J}$ is Turing-recognizable.
+\\
+\textbf{Solution:} let $L_1 = \{\langle M, x \rangle \vert M\;\text{is a TM and $M$ does not accept $x$}\}$. We can see $\overline{A_{TM}} \le_m L_1$. We show $L_1 \le_m J$ with the following reduction: on input $w$, output $1w$. We have that $w \in L_1$ if and only if $1w \in J$, showing $J$ is not Turing-recognizable. We now show $\overline{A_{TM}} \le_m \overline{J}$, done by the following reduction: on input $w$, output $0w$. We have $w \in \overline{A_{TM}}$ if and only if $0w \in \overline{J}$, showing that $\overline{J}$ is not Turing-recognizable.
+
 %		5.25		%
 \item[5.25]Give an example of an undecidable language $B$, where $B \le_{m} \overline{B}$.
 \\
