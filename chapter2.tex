@@ -54,6 +54,32 @@ Yes it is ambiguous. Choose the word $abc$. The two derivations are:
 \textbf{Solution:} \alreadyanswered
 \end{enumerate}
 
+%		2.24		%
+\item[2.24]Let $E = \{a^ib^j \vert i \ne j\;\text{and}\;2i \ne j\}$. Show that $E$ is a context-free language.
+\\
+\textbf{Solution:} This is a partition of 3 languages: $L_1, L_2, L_3$ (i.e., it is their union). They are defined as follows: 
+\begin{itemize}
+\item $L_1 = \{a^ib^j \vert i > j\}$,
+\item $L_2 = \{a^ib^j \vert i < j\;\text{and}\;2i > j\}$,
+\item $L_3 = \{a^ib^j \vert 2i < j\}$.
+\end{itemize}
+It suffices to show that $L_1, L_2, L_3$ are all context-free languages. They are due to the following grammars:
+\par $L_1$:
+\begin{itemize}
+\item $S \to aSb \vert aA$,
+\item $A \to aA \vert \epsilon$
+\end{itemize}
+\par $L_2$:
+\begin{itemize}
+\item $S \to aAb$,
+\item $A \to aAb \vert aAbb \vert abb$.
+\end{itemize}
+\par $L_3$:
+\begin{itemize}
+\item $S \to aSbb \vert Ab$,
+\item $A \to Ab \vert \epsilon$
+\end{itemize}
+
 %		2.30		%
 \item[2.30]Use the pumping lemma to show that the following languages are not context free.
 \begin{enumerate}
