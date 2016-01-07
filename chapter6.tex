@@ -14,6 +14,18 @@ $M$ = ``On input $w$:
 \end{enumerate}
 Now let $N = q($\angles{M}$)$. The computation in Step 2 writes \angles{q($\angles{M}$)} = \angles{N}. $N$ writes \angles{M} to the tape, so the construction of $M$ and $N$ is correct.
 
+%		6.13		%
+\item[6.13]For each $m > 1$ let $\mathbb{Z}_m = \{0,1,2,\cdots,m-1\}$, and let $F_m = (\mathbb{Z}_m, +, \times)$ be the model whose universe is $\mathbb{Z}_m$ and that has relations corresponding to the $+$ and $\times$ relations computed modulo $m$. Show that for each $m$, the theory Th($F_m$) is decidable.
+\\
+\textbf{Solution:} we are given a formula $\phi = Q_1x_1\cdots Q_kx_k \psi(x_1, \cdots, x_n)$ (assuming the $Q_i$ are quantifiers, and $\psi$ has no quantifiers). We iteratively define $I_\ell$ for $0 \le \ell \le n$:
+\begin{itemize}
+\item $I_n(x_1, \cdots, x_n) = \psi(x_1, \cdots, x_n)$,
+\item $I_{\ell-1}(x_1, \cdots, x_{\ell-1}) = \bigvee_{i=0}^{m-1} I_{i}(x_1, \cdots, x_{\ell-1}, i)$ if $Q_\ell$ is $\exists$,
+\item $I_{\ell-1}(x_1, \cdots, x_{\ell-1}) = \bigwedge_{i=0}^{m-1} I_{i}(x_1, \cdots, x_{\ell-1}, i)$ if $Q_\ell$ is $\forall$.
+\end{itemize}
+We then output the value of $I_0$. By an induction argument, we correctly calculate the truth value of $\phi$. Therefore, Th($F_m$) is decidable. 
+
+
 %		6.23		%
 \item[6.23]Show that the function $K(x)$ is not a computable function.
 \\
