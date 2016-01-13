@@ -189,6 +189,18 @@ Show that if $A$ is regular, then $A_{\frac{1}{3} - \frac{1}{3}}$ is not necessa
 \\
 \textbf{Solution:} Let $A = \{0^*\#1^*\}$, which is regular. Therefore, $A_{\frac{1}{3} - \frac{1}{3}} \cap \{0^*1^*\} = \{0^n1^n | n \ge 0\}$ is also regular since regular languages are closed under intersection, and $\{0^*1^*\}$ is a regular language. However, the resulting language is not regular, so therefore $A_{\frac{1}{3} - \frac{1}{3}}$ is not necessarily regular when $A$ is.
 
+%		1.63		%
+\item[1.63]
+\begin{enumerate}
+\item Let $A$ be an infinite regular language. Prove that $A$ can be split into two infinite disjoint regular subsets.
+\\
+\textbf{Solution:} since $A$ is infinite and regular, then the conditions of the Pumping Lemma for Regular Languages hold, i.e., that there is a $p \ge 0$ such that for all $w \in A$, we can partition $w$ into $w = xyz$ that satisfy those 3 conditions. Consider $A' = \{xy^{2i}z\;\vert\;i \ge 0\}$, and $A'' = L \cap \overline{A'}$. These are the desired languages because they partition $A$ and are infinite. 
+
+\item Let $B$ and $D$ be two languages. Write $B \Subset D$ if $B \subseteq D$ and $D$ contains infinitely many strings that are not in $B$. Show that if $B$ and $D$ are two regular languages where $B \Subset D$, then we can find a regular language $C$ where $B \Subset C \Subset D$.
+\\
+\textbf{Solution:} Let $L = D \cap \overline{B}$; $L$ is regular by the closure operations, and is infinite. By the Pumping Lemma for Regular Languages, there is a $w \in L$ such that $w = xyz$ such that $|y| > 0$, and for all $i \ge 0$, $xy^i z \in L$. Let $C = B \cup \{xy^i z \in L\;\vert\;i\;\text{is even}\}$. Call the second language $L'$. We can see that $C$ is regular. Since $L' \cap \overline{B}$ is infinite, we have $B \Subset C$. By a similar analysis, we have $C \Subset D$.
+\end{enumerate}
+
 %		1.70		%
 \item[1.70]We define the \textbf{\emph{avoids}} operation for languages $A$ and $B$ to be
 \begin{center}
