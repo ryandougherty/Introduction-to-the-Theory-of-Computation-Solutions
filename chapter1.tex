@@ -109,6 +109,11 @@ The start state is $q_{0, 0}$, and the final state is $q_{3, 2}$.
 
 \par Another way to approach this problem is an informal explanation: we reverse all of the transitions of $M$, and set the accept state of $N$ to be $M$'s start state. Also, introduce a new state $q_0'$ as $N$'s start state, which goes to every accept state in $M$ by an $\epsilon$-transition.
 
+%		1.39		%
+\item[1.39]The construction in Theorem 1.54 shows that every GNFA is equivalent to a GNFA with only two states. We can show that an opposite phenomenon occurs for DFAs. Prove that for every $k > 1$, a language $A_k \subseteq \{0,1\}^*$ exists that is recognized by a DFA with $k$ states but not by one with only $k-1$ states.
+\\
+\textbf{Solution:} let $L_k = \{0^i\;\vert\;i \ge k-1\}$. This language consists of strings of length $\ge k-1$. Therefore, no DFA of $k-1$ states can recognize this language, but certainly one of $k$ states can.
+
 %		1.40		%
 \item[1.40]Recall that string $x$ is a \textbf{prefix} of string $y$ if a string $z$ exists where $xz = y$, and that $x$ is a \textbf{proper prefix} of $y$ if in addition $x \ne y$. In each of the following parts, we define an operation on a language $A$. Show that the class of regular languages is closed under that operation.
 \begin{enumerate}
@@ -166,28 +171,39 @@ Thus 101 $\in D$ because 101 contains a single 01 and a single 10, but 1010 $\no
 %		1.53		%
 \item[1.53]Let $\Sigma$ = \{0, 1, +, =\} and $ADD$ = \{ $x = y + z$ $|$ $x, y, z$ are binary integers, and $x$ is the sum of $y$ and $z$\}. Show that $ADD$ is not regular.
 \\
-\textbf{Solution:} Assume that $ADD$ is regular. Therefore, there exists a pumping length $p \in \mathbb{Z}$ such that the three conditions of the Pumping Lemma are satisfied. Choose $w$ as $1^p=0^p+1^p$. Clearly, $w \in ADD$. By the conditions of the Pumping Lemma, we can partition $w = xyz$ such that $|xy| \le p, |y| > 0$, and $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$.
-\\
-By the first and second conditions of the Pumping Lemma, $x$ and $y$ consist entirely of 1s, i.e. $x = 1^a, y = 1^b, z = 1^{p-a-b}=0^p+1^p$ for $a \ge 0, b > 0$.
-\\
-By the third condition, $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$. Choose $i=2$: $xy^2z = 1^a1^{2b}1^{p-a-b}=0^p+1^p$ = $1^{p+b}=0^p+1^p$. However, this string is not in $ADD$, because this implies $p+b = p$, but $b > 0$, a contradiction. Therefore, $ADD$ is not regular.
+\textbf{Solution:} Assume that $ADD$ is regular. Therefore, there exists a pumping length $p \in \mathbb{Z}$ such that the three conditions of the Pumping Lemma are satisfied. Choose $w$ as $1^p=0^p+1^p$. Clearly, $w \in ADD$. By the conditions of the Pumping Lemma, we can partition $w = xyz$ such that $|xy| \le p, |y| > 0$, and $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$. By the first and second conditions of the Pumping Lemma, $x$ and $y$ consist entirely of 1s, i.e. $x = 1^a, y = 1^b, z = 1^{p-a-b}=0^p+1^p$ for $a \ge 0, b > 0$. By the third condition, $xy^iz \in ADD$ for $\forall i \in \mathbb{N}$. Choose $i=2$: $xy^2z = 1^a1^{2b}1^{p-a-b}=0^p+1^p$ = $1^{p+b}=0^p+1^p$. However, this string is not in $ADD$, because this implies $p+b = p$, but $b > 0$, a contradiction. Therefore, $ADD$ is not regular.
 
 %		1.55		%
 \item[1.55]The pumping lemma says that every regular language has a pumping length $p$, such that every string in the language can be pumped if it has length $p$ or more. If $p$ is a pumping length for language $A$, so is any length $p' \ge p$. The minimum pumping length for $A$ is the smallest $p$ that is a pumping length for $A$. For example, if $A = 01^*$, the minimum pumping length is 2. The reason is that the string $s = 0$ is in $A$ and has length 1 yet $s$ cannot be pumped; but any string in $A$ of length 2 or more contains a 1 and hence can be pumped by dividing it so that $x = 0, y = 1$, and $z$ is the rest. For each of the following languages, give the minimum pumping length and justify your answer.
 \begin{enumerate}
-\item[a.]\textbf{Solution:} \alreadyanswered
-\item[b.]\textbf{Solution:} \alreadyanswered
-\item[d.]\textbf{Solution:} \alreadyanswered
+\item[a.]$0001^*$
+\\ 
+\textbf{Solution:} \alreadyanswered
+\item[b.]$0^*1^*$
+\\
+\textbf{Solution:} \alreadyanswered
+\item[c.]$001 \cup 0^*1^*$
+\\
+\textbf{Solution:} We cannot pump $001$, so the minimum pumping length is 4. 
+\item[d.]$0^*1^+0^+1^* \cup 10^*1$
+\\
+\textbf{Solution:} \alreadyanswered
+\item[e.]$(01)^*$
+\\
+\textbf{Solution:} We cannot pump $\epsilon$, so the minimum pumping length is 1 (if we wanted to be constructive, the answer would be 2, since there is no string of length 1 here). 
+\item[g.]$1^*01^*01^*$
+\\
+\textbf{Solution:} We cannot pump $00$, but we can for $100$, so the minimum pumping length is 3. 
 \end{enumerate}
 
 %		1.58		%
 \item[1.58]If $A$ is any language, let $A_{\frac{1}{3} - \frac{1}{3}}$ be the set of all strings in $A$ with their middle thirds removed so that
 \begin{center}
-$A_{\frac{1}{3} - \frac{1}{3}} = \{xz |$ for some $y$, $|x| = |y| = |z|$ and $xyz \in A$\}.
+$A_{\frac{1}{3} - \frac{1}{3}} = \{xz\;\vert\;\text{for some $y$, $|x| = |y| = |z|$ and $xyz \in A$}\}$.
 \end{center}
 Show that if $A$ is regular, then $A_{\frac{1}{3} - \frac{1}{3}}$ is not necessarily regular.
 \\
-\textbf{Solution:} Let $A = \{0^*\#1^*\}$, which is regular. Therefore, $A_{\frac{1}{3} - \frac{1}{3}} \cap \{0^*1^*\} = \{0^n1^n | n \ge 0\}$ is also regular since regular languages are closed under intersection, and $\{0^*1^*\}$ is a regular language. However, the resulting language is not regular, so therefore $A_{\frac{1}{3} - \frac{1}{3}}$ is not necessarily regular when $A$ is.
+\textbf{Solution:} Let $A = \{0^*\#1^*\}$, which is regular. Therefore, $A_{\frac{1}{3} - \frac{1}{3}} \cap \{0^*1^*\} = \{0^n1^n\;|\;n \ge 0\}$ is also regular since regular languages are closed under intersection, and $\{0^*1^*\}$ is a regular language. However, the resulting language is not regular, so therefore $A_{\frac{1}{3} - \frac{1}{3}}$ is not necessarily regular when $A$ is.
 
 %		1.63		%
 \item[1.63]
