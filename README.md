@@ -1,7 +1,9 @@
 Introduction-to-the-Theory-of-Computation-Solutions
 ===================================================
 
-If you want to contribute to this repository, feel free to create a pull request (please copy the format as in the other exercises). Also, let me know if there are any errors in the existing solutions.
+If you want to contribute to this repository, feel free to create a pull request
+(please copy the format as in the other exercises). Also, let me know if there
+are any errors in the existing solutions.
 
 Solutions to Michael Sipser's Introduction to the Theory of Computation Book (3rd Edition).
 
@@ -16,3 +18,9 @@ Completed chapters:
 - Chapter 8: Not yet
 - Chapter 9: Not yet
 - Chapter 10: Not yet
+
+
+## Compiling
+
+To compile this project instal a [latex compiler](https://www.sharelatex.com/learn/Choosing_a_LaTeX_Compiler)
+on your machine, then cd to this project and run `pdflatex *.tex` 
