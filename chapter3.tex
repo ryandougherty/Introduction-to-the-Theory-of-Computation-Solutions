@@ -87,6 +87,15 @@ $L$ = ``On input w:
 \textbf{Solution:} \alreadyanswered
 \end{enumerate}
 
+%		3.18		%
+\item[3.18]Show that a language is decidable iff some enumerator enumerates the language in the standard string order.
+\\
+\textbf{Solution:} let the language be $L$. If $L$ is decidable, then we can just generate strings in lexicographic order, and test if each is in $L$, thus generating an enumerator that prints in standard string order. If we have such an enumerator $E$:
+\begin{enumerate}
+\item If $L$ is finite, then just hardwire each of the strings in $L$ in $E$.
+\item If $L$ is infinite, then on an input $w$, run $E$ to print all strings in standard string order until a string lexicographically after $w$ appears; if $w$ has appeared, accept; otherwise, reject.
+\end{enumerate}
+
 %		3.22		%
 \item[3.22]Let $A$ be the language containing only the single string $s$, where $s = 0$ if life never will be found on Mars, and $s = 1$ if life will be found on Mars someday. Is $A$ decidable? Why or why not? For the purposes of this problem, assume that the question of whether life will be found on Mars has an unambiguous YES or NO answer.
 \\
