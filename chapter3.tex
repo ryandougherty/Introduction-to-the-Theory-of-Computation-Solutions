@@ -45,6 +45,11 @@ $E$ = ``Ignore the input.
 \\
 \textbf{Solution:} \alreadyanswered
 
+%		3.11		%
+\item[3.11] A \emph{\textbf{Turing machine with doubly infinite tape}} is similar to an ordinary Turing machine, but its tape is infinite to the left as well as to the right. The tape is initially filled with blanks except for the portion that contains the input. Computation is defined as usual except that the head never encounters an end to the tape as it moves leftward. Show that this type of Turing machine recognizes the class of Turing-recognizable languages.
+\\
+\textbf{Solution:} we simulate a doubly-infinite TM with an ordinary one with 2 tapes (which is equivalent to single-tape TMs). The first tape starts with the input string, and the second is blank. Cut the doubly-infinite tape into 2 parts, at the start of the input string, and these two parts are the same as the two tapes.
+
 %		3.12		%
 \item[3.12]A \textbf{\emph{Turing machine with left reset}} is similar to an ordinary Turing machine, but the transition function has the form
 \[
