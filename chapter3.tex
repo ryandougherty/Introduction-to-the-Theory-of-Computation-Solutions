@@ -40,6 +40,16 @@ $E$ = ``Ignore the input.
 \end{enumerate}
 \textbf{Solution:} The second step might run forever, and therefore $E$ may not move onto the next string.  
 
+%		3.7		%
+\item[3.7]Explain why the following is not a description of a legitimate Turing machine.
+\\
+$M_{bad}$ = ``On input $\langle p \rangle$, a polynomial over variables $x_1, \cdots, x_k$:
+\begin{enumerate}\item Try all possible settings of $x_1, \cdots, x_k$ to integer values.
+\item Evaluate $p$ on all of these settings.
+\item If any of these settings evaluates to 0, \emph{accept}; otherwise, \emph{reject}."
+\end{enumerate}
+\textbf{Solution:} it's not a valid description because the machine will never halt, and the first step alone will take infinite time. 
+
 %		3.10		%
 \item[3.10]Say that a \textbf{\emph{write-once Turing machine}} is a single-tape TM that can alter each tape square at most once (including the input portion of the tape). Show that this variant Turing machine model is equivalent to the ordinary Turing machine model. (Hint: As a first step, consider the case whereby the Turing machine may alter each tape square at most twice. Use lots of tape.)
 \\
