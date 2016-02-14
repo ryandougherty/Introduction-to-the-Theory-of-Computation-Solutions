@@ -32,6 +32,14 @@
 \\
 \textbf{Solution:} \alreadyanswered
 
+%		3.6		%
+\item[3.6]In Theorem 3.21, we showed that a language is Turing-recognizable iff some enumerator enumerates it. Why didn?t we use the following simpler algorithm for the forward direction of the proof? As before, $s_1, s_2, \cdots$ is a list of all strings in $\Sigma^*$.
+\\
+$E$ = ``Ignore the input.
+\begin{enumerate}\item Repeat the following for $i=1,2,3,\cdots$.\item Run $M$ on $s_i$.\item If it accepts, print out si."
+\end{enumerate}
+\textbf{Solution:} The second step might run forever, and therefore $E$ may not move onto the next string.  
+
 %		3.10		%
 \item[3.10]Say that a \textbf{\emph{write-once Turing machine}} is a single-tape TM that can alter each tape square at most once (including the input portion of the tape). Show that this variant Turing machine model is equivalent to the ordinary Turing machine model. (Hint: As a first step, consider the case whereby the Turing machine may alter each tape square at most twice. Use lots of tape.)
 \\
@@ -74,17 +82,13 @@ $L$ = ``On input w:
 %		3.15		%
 \item[3.15]Show that the collection of decidable languages is closed under the operation of
 \begin{enumerate}
-\item[a.]union.
-\\
-\textbf{Solution:} \alreadyanswered
+\item[a.]union. \textbf{Solution:} \alreadyanswered
 \end{enumerate}
 
 %		3.16		%
 \item[3.16]Show that the collection of Turing-recognizable languages is closed under the operation of
 \begin{enumerate}
-\item[a.]union.
-\\
-\textbf{Solution:} \alreadyanswered
+\item[a.]union. \textbf{Solution:} \alreadyanswered
 \end{enumerate}
 
 %		3.18		%
