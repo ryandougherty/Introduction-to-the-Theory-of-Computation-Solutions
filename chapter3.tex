@@ -1,6 +1,17 @@
 \section{Chapter 3}
 \begin{enumerate}
 
+\newcommand{\bl}{\sqcup}
+
+%		3.1		%
+\item[3.1]This exercise concerns TM $M_2$, whose description and state diagram appear in Example 3.7. In each of the parts, give the sequence of configurations that $M_2$ enters when started on the indicated input string.
+\begin{enumerate}
+\item[a.]0. \textbf{Solution:} $q_{1}0 \to \bl q_2\bl \to{\bl}{\bl}q_{accept}$.
+\item[b.]00. \textbf{Solution:} \alreadyanswered
+\item[c.]000. \textbf{Solution:} $q_{1}000 \to \bl q_2 00 \to \bl x q_3 0 \to \bl x 0 q_4 \bl \to \bl x 0{\bl}q_{reject}$.
+\item[d.]000000. \textbf{Solution:} $q_{1}000000 \to \bl q_2 00000 \to \bl x q_3 0000 \bl \to \bl x 0 q_4 000 \to \bl x 0 x q_3 00 \to \bl x 0 x 0 q_4 0 \to \bl x0x0xq_3 \bl \to \bl x0x0q_5x\bl \to \bl x0xq_5 0x\bl \to \bl x 0 q_5 x 0 x \bl \to \bl x q_5 0x0x\bl \to \bl q_5 x0x0x\bl \to q_5{\bl}x0x0x\bl \to \bl q_2 x0x0x \bl \to \bl x q_2 0x0x\bl \to \bl xxq_3 x0x\bl \to \bl xxxq_3 0 x\bl \to \bl xxx0q_4 x \bl \to \bl xxx0xq_4 \bl \to \bl xxx0x{\bl}q_{reject}$. 
+\end{enumerate}
+
 %		3.3		%
 \item[3.3]Modify the proof of Theorem 3.16 to obtain Corollary 3.19, showing that a language is decidable iff some nondeterministic Turing machine decides it. (You may assume the following theorem about trees. If every node in a tree has finitely many children and every branch of the tree has finitely many nodes, the tree itself has finitely many nodes.)
 \\

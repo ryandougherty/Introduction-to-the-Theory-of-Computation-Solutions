@@ -28,9 +28,9 @@ $q_5$ & $q_4$ & $q_5$
 
 \textbf{Solution:} 
 \begin{tikzpicture}[shorten >=1pt,node distance=2cm,initial text={},on grid,auto] 
-   \node[state,initial] (q_1)   {$q_1$}; 
+   \node[state] (q_1)   {$q_1$}; 
    \node[state] (q_2) [right=of q_1] {$q_2$}; 
-   \node[state,accepting](q_3) [right=of q_2] {$q_3$};
+   \node[state,initial above,accepting](q_3) [right=of q_2] {$q_3$};
    \node[state] (q_4) [right=of q_3] {$q_4$};
    \node[state] (q_5) [right=of q_4] {$q_5$};
     \path[->] 
