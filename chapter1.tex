@@ -58,8 +58,39 @@ $q_5$ & $q_4$ & $q_5$
 \end{itemize}
 The start state is $q_{0, 0}$, and the final state is $q_{3, 2}$. 
 \item[b.]\textbf{Solution:} \alreadyanswered
+\item[c.]\textbf{Solution:} The state set is $Q = \{q_{i, j} \colon i \in \{0, 1, 2, 3\}, j \in \{even, odd\}\}$, with transition function:
+\begin{itemize}
+\item $\delta(q_{i, even}, a) = q_{i, odd}$ for all $i$,
+\item $\delta(q_{i, odd}, a) = q_{i, even}$ for all $i$,
+\item $\delta(q_{i, j}, b) = q_{i+1, j}$ for $i \in \{0, 1, 2\}, j \in \{even, odd\}$,
+\item $\delta(q_{3, j}, b) = q_{3, j}$ for $j \in \{even, odd\}$.
+\end{itemize}
+
 \item[d.]\textbf{Solution:} \alreadyanswered
 \end{enumerate}
+
+%\begin{table}[]
+%\centering
+%\begin{tabular}{l|l|}
+%Residue Class    & Solution                                                                                                            \\\hline
+%$n = 6k, 6k+4$   & $A_1 = \{(2i, i)\;\vert\;1\le i \le \frac{n}{2}\}$,                                                                 \\
+%                 & $A_2 = \{(2i-1, \frac{n}{2}+i)\;\vert\;1\le i \le \frac{n}{2}\}$,                                                   \\
+%$n = 6k+1, 6k+5$ & $B_1 = \{(n, 1)\}$,                                                                                                \\
+%                 & $B_2 = \{(2i, i+1)\;\vert\;1\le i \le \frac{n-1}{2}\}$,                                                             \\
+%                 & $B_3 = \{(2i-1, \frac{n+1}{2}+i)\;\vert\;1\le i \le \frac{n-1}{2}\}$,                                               \\
+%$n = 6k+2$       & $C_1 = \{(4, 1)\}$,                                                                                                 \\
+%                 & $C_2 = \{(n, \frac{n}{2}-1)\}$,                                                                                \\
+%                 & $C_3 = \{(2, \frac{n}{2})\}$,                                                                                       \\
+%                 & $C_4 = \{(n-1, \frac{n}{2}-1)\}$,                                                                                    \\
+%                 & $C_5 = \{(1, \frac{n}{2}+2)\}$,                                                                                     \\
+%                 & $C_6 = \{(n-3, n)\}$,                                                                                               \\
+%                 & $C_7 = \{(n-2i, i+1)\;\vert\;1\le i \le \frac{n}{2}-3\}$,                                                             \\
+%                 & $C_8 = \{(n-2i-3, \frac{n}{2}+i+2)\;\vert\;1\le i \le \frac{n}{2}-3\}$,                                               \\
+%$n = 6k+3$       & \multicolumn{1}{m{10cm}|}{Create the solution for the $(n-1)\times (n-1)$ board in the bottom right-hand corner, and add a queen at $(1, 1)$.}
+%\end{tabular}
+%\caption{Table of $n$-queens solutions for all $n \ge 3$.}
+%\label{tbl:nqueens}
+%\end{table}
 
 %		1.5		%
 \item[1.5]Each of the following languages is the complement of a simpler languages. In each part, construct DFAs for the simpler language, then use it to give the state diagram of a DFA for the language given. In all parts, $\Sigma = \{a, b\}$.
