@@ -1,1 +1,48 @@
 \section{Chapter 8}
+\begin{enumerate}
+
+% 8.25 %
+\item[8.25] An undirected graph is \textbf{bipartite} if its nodes may be divided
+into two sets so that all edges go from a node in one set to a node in the other set.
+Show that a graph is bipartite if and only if it doesn't contain a cycle that has
+an odd number of nodes.
+
+Let $BIPARTITE = \{ \langle G \rangle | \ G$ is a bipartite graph \}. Show that
+$BIPARTITE \in$ NL.
+\\
+\textbf{Solution:}
+Let $G=(V,E)$ be bipartite.
+
+So, let $V=A \cup B$ such that $A \cap B = \emptyset$ and that all edges $e \in E$
+are such that $e$ is of the form $\{a,b\}$ where $a \in A$ and $b \in B$.
+
+(This is the definition of a bipartite graph.)
+
+Suppose $G$ has (at least) one odd cycle $C$.
+
+Let the length of $C$ be $n$.
+
+Let $C=(v_1,v_2,…,v_n,v_1)$.
+
+WLOG, let $v_1 \in A$. It follows that $v_2 \in B$ and hence $v_3 \in A$, and so on.
+
+Hence we see that $\forall k \in \{1,2,…,n\}$, we have:
+
+:$v_k \in \begin{cases}
+A : & k \text{ odd} \\
+B : & k \text{ even}
+\end{cases}$
+
+But as $n$ is odd, $v_n \in A$.
+
+But $v_1 \in A$, and $(v_n,v_1) \in C_n$.
+
+So $(v_n, v_1) \in E$ which contradicts the assumption that $G$ is bipartite.
+
+Hence if $G$ is bipartite, it has no odd cycles.
+
+\textbf{Note}: This only proves one direction of the iff, to complete the proof we will need
+to show that having no odd cycles implies that a graph is bipartite and show that
+$BIPARTITE \in$ NL.
+
+\end{enumerate}
