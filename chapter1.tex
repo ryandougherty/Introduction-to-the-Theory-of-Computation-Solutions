@@ -58,7 +58,7 @@ $q_5$ & $q_4$ & $q_5$
 \end{itemize}
 The start state is $q_{0, 0}$, and the final state is $q_{3, 2}$. 
 \item[b.]\textbf{Solution:} \alreadyanswered
-\item[c.]\textbf{Solution:} The state set is $Q = \{q_{i, j} \colon i \in \{0, 1, 2, 3\}, j \in \{even, odd\}\}$, with transition function:
+\item[c.]\textbf{Solution:} the state set is $Q = \{q_{i, j} \colon i \in \{0, 1, 2, 3\}, j \in \{even, odd\}\}$, with transition function:
 \begin{itemize}
 \item $\delta(q_{i, even}, a) = q_{i, odd}$ for all $i$,
 \item $\delta(q_{i, odd}, a) = q_{i, even}$ for all $i$,
@@ -67,6 +67,23 @@ The start state is $q_{0, 0}$, and the final state is $q_{3, 2}$.
 \end{itemize}
 
 \item[d.]\textbf{Solution:} \alreadyanswered
+
+\item[e.]\textbf{Solution:} the state set is $Q = \{ij \colon i,j \in \{0, 1, 2\}\}$, with transition function:
+\begin{table}[]
+\centering
+\begin{tabular}{l|l|l}
+State $\downarrow$ Symbol $\rightarrow$   & $a$ & $b$ \\\hline
+00 (start) & 10 & 21\\
+01 & 11 & 22\\
+02 & 12 & 22\\
+10 (final) & 10 & 11\\
+11 (final) & 11 & 12\\
+12 & 12 & 12\\
+20 & 20 & 21\\
+21 & 21 & 22\\
+22 & 22 & 22
+\end{tabular}
+\end{table}
 \end{enumerate}
 
 %		1.5		%
