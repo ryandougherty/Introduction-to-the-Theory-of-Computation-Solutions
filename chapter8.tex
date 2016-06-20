@@ -1,1 +1,10 @@
 \chapter*{Chapter 8}
+
+\begin{enumerate}
+
+%		8.6		%
+\item[8.6]Show that any PSPACE-hard language is also NP-hard.
+\\
+\textbf{Solution:} by definition of PSPACE-hardness for a language $L$, for all $A \in$ PSPACE, $A \le_P L$. Since SAT $\in$ NP, SAT $\in$ PSPACE because NP $\subseteq$ PSPACE. Therefore, SAT $\le_P L$. Since SAT is NP-complete, it is NP-hard. Therefore since SAT $\le_P L$, $L$ is NP-hard (by transitivity of $\le_P$).
+
+\end{enumerate}
