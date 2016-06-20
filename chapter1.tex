@@ -83,11 +83,25 @@ State $\downarrow$ Symbol $\rightarrow$   & $a$ & $b$ \\\hline
 21 & 21 & 22\\
 22 & 22 & 22
 \end{tabular}
-\caption{1.4e Solution.}
+\caption{1.4e state table.}
 \label{lbl:1.4e}
 \end{table}
 
-\item[g.]\textbf{Solution:} the state set is $Q = \{ij \colon i,j \in \{0, 1\}\}$, with transition function in \Cref{lbl:1.4f}.
+\item[f.]\textbf{Solution:} the state set is $Q = \{ij \colon i,j \in \{0, 1\}\}$, with transition function in \Cref{lbl:1.4f}.
+\begin{table}[]
+\centering
+\begin{tabular}{l|l|l}
+State $\downarrow$ Symbol $\rightarrow$   & $a$ & $b$ \\\hline
+00 (start) & 01 & 10\\
+01 & 00 & 11\\
+10 & 01 & 00\\
+11 (final) & 00 & 01
+\end{tabular}
+\caption{1.4f state table.}
+\label{lbl:1.4f}
+\end{table}
+
+\item[g.]\textbf{Solution:} the state set is $Q = \{ij \colon i,j \in \{0, 1\}\}$, with transition function in \Cref{lbl:1.4g}.
 \begin{table}[]
 \centering
 \begin{tabular}{l|l|l}
@@ -97,7 +111,7 @@ State $\downarrow$ Symbol $\rightarrow$   & $a$ & $b$ \\\hline
 10 & 01 & 00\\
 11 & 00 & 01
 \end{tabular}
-\caption{1.4g Solution.}
+\caption{1.4g state table.}
 \label{lbl:1.4g}
 \end{table}
 \end{enumerate}
