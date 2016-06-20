@@ -1,4 +1,4 @@
-\section{Chapter 1}
+\chapter*{Chapter 1}
 
 \begin{enumerate}
 
@@ -68,8 +68,8 @@ The start state is $q_{0, 0}$, and the final state is $q_{3, 2}$.
 
 \item[d.]\textbf{Solution:} \alreadyanswered
 
-\item[e.]\textbf{Solution:} the state set is $Q = \{ij \colon i,j \in \{0, 1, 2\}\}$, with transition function:
-\begin{table}[]
+\item[e.]\textbf{Solution:} the state set is $Q = \{ij \colon i,j \in \{0, 1, 2\}\}$, with transition function in \Cref{lbl:1.4e}.
+\begin{table}[!htb]
 \centering
 \begin{tabular}{l|l|l}
 State $\downarrow$ Symbol $\rightarrow$   & $a$ & $b$ \\\hline
@@ -83,6 +83,22 @@ State $\downarrow$ Symbol $\rightarrow$   & $a$ & $b$ \\\hline
 21 & 21 & 22\\
 22 & 22 & 22
 \end{tabular}
+\caption{1.4e Solution.}
+\label{lbl:1.4e}
+\end{table}
+
+\item[g.]\textbf{Solution:} the state set is $Q = \{ij \colon i,j \in \{0, 1\}\}$, with transition function in \Cref{lbl:1.4f}.
+\begin{table}[]
+\centering
+\begin{tabular}{l|l|l}
+State $\downarrow$ Symbol $\rightarrow$   & $a$ & $b$ \\\hline
+00 (start) & 11 & 10\\
+01 (final) & 10 & 11\\
+10 & 01 & 00\\
+11 & 00 & 01
+\end{tabular}
+\caption{1.4g Solution.}
+\label{lbl:1.4g}
 \end{table}
 \end{enumerate}
 

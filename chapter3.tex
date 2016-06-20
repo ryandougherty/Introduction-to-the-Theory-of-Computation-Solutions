@@ -1,4 +1,4 @@
-\section{Chapter 3}
+\chapter*{Chapter 3}
 \begin{enumerate}
 
 \newcommand{\bl}{{\sqcup}}
@@ -36,7 +36,10 @@
 \item[3.6]In Theorem 3.21, we showed that a language is Turing-recognizable iff some enumerator enumerates it. Why didn?t we use the following simpler algorithm for the forward direction of the proof? As before, $s_1, s_2, \cdots$ is a list of all strings in $\Sigma^*$.
 \\
 $E$ = ``Ignore the input.
-\begin{enumerate}\item Repeat the following for $i=1,2,3,\cdots$.\item Run $M$ on $s_i$.\item If it accepts, print out si."
+\begin{enumerate}
+\item Repeat the following for $i=1,2,3,\cdots$.
+\item Run $M$ on $s_i$.
+\item If it accepts, print out si."
 \end{enumerate}
 \textbf{Solution:} The second step might run forever, and therefore $E$ may not move onto the next string.  
 
@@ -44,7 +47,8 @@ $E$ = ``Ignore the input.
 \item[3.7]Explain why the following is not a description of a legitimate Turing machine.
 \\
 $M_{bad}$ = ``On input $\langle p \rangle$, a polynomial over variables $x_1, \cdots, x_k$:
-\begin{enumerate}\item Try all possible settings of $x_1, \cdots, x_k$ to integer values.
+\begin{enumerate}
+\item Try all possible settings of $x_1, \cdots, x_k$ to integer values.
 \item Evaluate $p$ on all of these settings.
 \item If any of these settings evaluates to 0, \emph{accept}; otherwise, \emph{reject}."
 \end{enumerate}
