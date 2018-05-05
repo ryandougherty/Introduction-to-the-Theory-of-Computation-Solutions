@@ -33,6 +33,6 @@ MiKTeX can run on Windows, Linux/UNIX-like systems and also Docker.
 
 There are many alternatives to compile LaTeX files, such as:
 - **TeX Live** (Linux/UNIX-like systems)
-- **MacTeX (Like **TeX Live**, but for Mac OS X)
+- **MacTeX** (Like **TeX Live**, but for Mac OS X)
 - **teTeX** (Linux/UNIX-like systems, discontinued)
 - **proTeXt** (Like **MiKTeX**)
