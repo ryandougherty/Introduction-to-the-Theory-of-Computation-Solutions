@@ -24,7 +24,7 @@ Completed chapters:
 For easier access to solutions, those are already compiled: just open **Solutions.pdf** in any PDF viewer (Or Google Chrome directly).
 
 ## Compiling LaTeX
-This PDF file was compiled using **MiKTeX 2.9.6839 (x64)** [(download)](https://miktex.org/download "Download MiKTeX 2.9.6839 (x64)") on macOS 10.14 (Mojave) x64 architecture using this terminal command (It also requires you to install dependencies):
+This PDF file was compiled using **MiKTeX 2.9.6840 (x64)** [(download)](https://miktex.org/download "Download MiKTeX 2.9.6840 (x64)") on macOS 10.14 (Mojave) x64 architecture using this terminal command (It also requires you to install dependencies):
 
 ```
 pdflatex Solutions.tex
