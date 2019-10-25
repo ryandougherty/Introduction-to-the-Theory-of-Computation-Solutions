@@ -146,6 +146,71 @@ State $\downarrow$ Symbol $\rightarrow$   & $a$ & $b$ \\\hline
 \item[b.]\textbf{Solution:} \alreadyanswered
 \end{enumerate}
 
+%		1.8		%
+\item[1.8]Use the construction in the proof of Theorem 1.45 to give diagrams of NFAs recognizing the union of the languages described in
+\begin{enumerate}
+\item[a.]\textbf{Solution:}
+\begin{tikzpicture}[shorten >=1pt,node distance=2cm,initial text={},on grid,auto] 
+   \node[state,initial left] (q_0)   {$q_0$}; 
+   \node[state] (q_1) [above right=of q_0] {$q_1$};
+   \node[state] (q_2) [right=of q_1] {$q_2$};
+   \node[state, accepting] (q_3) [right=of q_2] {$q_3$};
+   \node[state] (q_4) [below right=of q_1] {$q_4$};
+   \node[state] (q_5) [below right=of q_0] {$q_5$};
+   \node[state] (q_6) [right=of q_5] {$q_6$};
+   \node[state] (q_7) [right=of q_6] {$q_7$};
+   \node[state,accepting] (q_8) [right=of q_7] {$q_8$};
+    \path[->]
+    (q_0) edge node {$\varepsilon$} (q_1)
+    	  edge node {$\varepsilon$} (q_5)
+    (q_1) edge node {$1$} (q_2)
+          edge node {$0$} (q_4)
+    (q_2) edge [loop above] node {$1$} (q_2)
+          edge node {$0$} (q_3)
+    (q_3) edge [loop right] node {$0$} (q_3)
+    (q_4) edge [loop right] node {$0,1$} (q_4)
+    (q_5) edge [loop below] node {$0$} (q_5)
+          edge node {$1$} (q_6)
+	(q_6) edge [loop below] node {$0$} (q_6)
+	      edge node {$1$} (q_7)
+	(q_7) edge [loop below] node {$0$} (q_7)
+	      edge node {$1$} (q_8)
+	(q_8) edge [loop right] node {$0,1$} (q_8);
+\end{tikzpicture}
+\item[b.]\textbf{Solution:}
+\begin{tikzpicture}[shorten >=1pt,node distance=2cm,initial text={},on grid,auto] 
+   \node[state,initial left] (q_0)   {$q_0$};
+   \node[state] (q_1) [above right=of q_0] {$q_1$}; 
+   \node[state] (q_2) [right=of q_1] {$q_2$};
+   \node[state] (q_3) [right=of q_2] {$q_3$};
+   \node[state] (q_4) [right=of q_3] {$q_4$};
+   \node[state,accepting] (q_5) [right=of q_4] {$q_5$};
+   \node[state,accepting] (q_6) [below right=of q_0] {$q_6$};
+   \node[state,accepting] (q_7) [right=of q_6] {$q_7$};
+   \node[state,accepting] (q_8) [right=of q_7] {$q_8$};
+   \node[state] (q_9) [right=of q_8] {$q_9$};
+    \path[->] 
+    (q_0) edge node {$\varepsilon$} (q_1)
+          edge node {$\varepsilon$} (q_6)
+    (q_1) edge [loop above] node {$1$} (q_1)
+          edge node {$0$} (q_2)
+    (q_2) edge [loop above] node {$0$} (q_2)
+          edge node {$1$} (q_3)
+    (q_3) edge node {$0$} (q_4)
+          edge [bend left=40] node {$1$} (q_1)
+    (q_4) edge [bend right=40] node {$0$} (q_2)
+          edge node {$1$} (q_5)
+    (q_5) edge [loop right] node {$0,1$} (q_5)
+    (q_6) edge [loop below] node {$0$} (q_6)
+    	  edge [bend left=20] node {$1$} (q_7)
+   	(q_7) edge [bend left=20] node {$0$} (q_6)
+   		  edge node {$1$} (q_8)
+   	(q_8) edge node {$0$} (q_9)
+   		  edge [loop below] node {$1$} (q_8)
+   	(q_9) edge [loop right] node {$0,1$} (q_9);
+\end{tikzpicture}
+\end{enumerate}
+
 %		1.11		%
 \item[1.11]Prove that every NFA can be converted to an equivalent one that has a single accept state.
 \\
