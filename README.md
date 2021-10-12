@@ -1,4 +1,7 @@
 # Introduction-to-the-Theory-of-Computation-Solutions
+
+Video playlist of solutions: https://www.youtube.com/watch?v=SCdsgVT6Ktw&list=PLylTVsqZiRXPlxS44-qkoyruEuF13V7Qs&ab_channel=EasyTheory
+
 ===================================================
 
 If you want to contribute to this repository, feel free to create a pull request (please copy the format as in the other exercises). Also, let me know if there are any errors in the existing solutions.
